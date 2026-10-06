@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#090b0f" />
+  <meta name="description" content="Rotina avançada de hipertrofia baseada nas evidências mais recentes: volume fracionado, frequência 2×, proximidade da falha e ênfase em posições alongadas." />
+  <title>Hipertrofia Insana</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="ambient" aria-hidden="true"><span></span><span></span><span></span></div>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Hipertrofia Insana — início">
+      <span class="brand-mark">HI</span>
+      <span>HIPERTROFIA <b>INSANA</b></span>
+    </a>
+    <div class="top-actions">
+      <span class="science-badge"><i></i> BASEADO EM EVIDÊNCIAS · 2026</span>
+      <button class="icon-button" id="resetButton" type="button" title="Limpar checklist do dia" aria-label="Limpar checklist do dia">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.34 5.66M20 4v7h-7"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">PROTOCOLO AVANÇADO • 3 A 5 DIAS</p>
+        <h1>Treine perto da falha.<br><em>Cresça no alongamento.</em></h1>
+        <p class="hero-text">Divisão para hipertrofia máxima com máquinas estáveis, ênfase nas posições alongadas, volume semanal medido em séries fracionadas e progressão registrada série a série.</p>
+      </div>
+      <div class="hero-metrics reveal delay-1" aria-label="Resumo do protocolo">
+        <div><strong>2×</strong><span>cada músculo por semana</span></div>
+        <div><strong>10–20</strong><span>séries fracionadas / semana</span></div>
+        <div><strong>0–2</strong><span>reps na reserva (RIR)</span></div>
+      </div>
+    </section>
+
+    <section class="week-section" aria-labelledby="weekTitle">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">SUA DIVISÃO</p>
+          <h2 id="weekTitle">Escolha a rotina e o dia</h2>
+        </div>
+        <p id="weekVolume" class="muted"></p>
+      </div>
+      <div class="schedule-tabs" id="scheduleTabs" role="tablist" aria-label="Escolha da programação semanal">
+        <button type="button" role="tab" data-schedule="padrao"><span>5 DIAS</span><strong>PPL + Upper/Lower · volume máximo</strong></button>
+        <button type="button" role="tab" data-schedule="pernas2x"><span>4 DIAS · PERNAS 2×</span><strong>Upper / Lower</strong></button>
+        <button type="button" role="tab" data-schedule="pernas1x"><span>4 DIAS · PERNAS 1×</span><strong>Push / Pull / Legs / Upper</strong></button>
+        <button type="button" role="tab" data-schedule="fullbody"><span>3 DIAS</span><strong>Full body · tempo curto</strong></button>
+      </div>
+      <p class="schedule-description" id="scheduleDescription"></p>
+      <nav class="day-tabs" id="dayTabs" aria-label="Dias da semana"></nav>
+      <div class="weekly-block">
+        <div class="weekly-head">
+          <strong>Volume semanal por músculo</strong>
+          <span class="legend"><i class="zone-low"></i>&lt; 8 baixo <i class="zone-good"></i>8–20 produtivo <i class="zone-high"></i>&gt; 20 alto</span>
+        </div>
+        <div class="muscle-summary weekly-summary" id="weeklySummary" aria-label="Volume semanal planejado"></div>
+        <small class="weekly-note">Séries fracionadas: cada série direta conta 1; cada série em que o músculo atua como sinergista (ex.: tríceps no supino) conta 0,5.</small>
+      </div>
+    </section>
+
+    <section class="session reveal" aria-live="polite">
+      <div class="session-header">
+        <div>
+          <div class="day-label" id="dayLabel"></div>
+          <h2 id="sessionTitle"></h2>
+          <p id="sessionSubtitle"></p>
+        </div>
+        <div class="session-score">
+          <span id="progressText">0%</span>
+          <small>CONCLUÍDO</small>
+        </div>
+      </div>
+      <div class="progress-track"><span id="progressBar"></span></div>
+      <div class="muscle-summary" id="muscleSummary"></div>
+
+      <div class="exercise-list" id="exerciseList"></div>
+
+      <aside class="intensity-note" id="intensityNote">
+        <div class="note-icon">!</div>
+        <div>
+          <strong>Insano não significa volume sem limite.</strong>
+          <p>Se a carga ou as repetições caírem mais de 10% com execução perfeita, encerre o músculo naquele dia. Se o desempenho cair por 2 sessões seguidas, faça uma semana de deload.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="method" id="metodo">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">COMO EXECUTAR</p>
+          <h2>As regras que fazem crescer</h2>
+        </div>
+      </div>
+      <div class="rule-grid">
+        <article><span>01</span><h3>Progressão dupla</h3><p>Trabalhe dentro da faixa de reps. Bateu o topo em todas as séries com a mesma técnica? Suba 2,5–5% de carga. Registre cada sessão no campo de carga.</p></article>
+        <article><span>02</span><h3>Perto da falha</h3><p>A hipertrofia cresce conforme a série se aproxima da falha. Compostos: RIR 1–2. Máquinas e isoladores: RIR 0–1, com a última série até a falha técnica.</p></article>
+        <article><span>03</span><h3>Foco no alongamento</h3><p>Amplitude completa priorizando a posição alongada. Após a falha, 4–6 parciais na metade alongada rendem estímulo extra com pouco custo.</p></article>
+        <article><span>04</span><h3>Descanso real</h3><p>2–3 min nos compostos e 60–120 s nos isoladores. Descansar mais de 60 s preserva reps e dá pequena vantagem hipertrófica.</p></article>
+        <article><span>05</span><h3>Volume inteligente</h3><p>10–20 séries fracionadas por músculo na semana, até ~10 por sessão. Acima disso cada série extra rende cada vez menos e cobra mais recuperação.</p></article>
+        <article><span>06</span><h3>Cadência</h3><p>Desça sob controle (≈2 s) e suba com intenção máxima. Não precisa contar 3–4 s: repetições entre 2 e 8 s geram hipertrofia semelhante.</p></article>
+        <article><span>07</span><h3>Blocos e deload</h3><p>Progrida por 6–8 semanas. Deload (metade das séries, RIR 3–4) quando o desempenho estagnar — ele gerencia fadiga, não acelera o crescimento.</p></article>
+        <article><span>08</span><h3>Fora da academia</h3><p>Proteína ~1,6 g/kg/dia (até 2,2 g/kg) em 3–5 refeições, leve superávit calórico e 7–9 h de sono. Sem isso, nenhum treino compensa.</p></article>
+      </div>
+    </section>
+
+    <section class="evidence" id="evidencias">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">BASE CIENTÍFICA</p>
+          <h2>De onde vêm as escolhas</h2>
+        </div>
+      </div>
+      <div class="evidence-grid">
+        <a href="https://pubmed.ncbi.nlm.nih.gov/41343037/" target="_blank" rel="noreferrer"><b>Volume e frequência</b><span>Pelland et al., 2026 — mais séries = mais hipertrofia, com retornos decrescentes; séries indiretas contam como frações.</span></a>
+        <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9935748/" target="_blank" rel="noreferrer"><b>Proximidade da falha</b><span>Refalo et al., 2023 — séries próximas da falha estimulam bem; falhar sempre não é obrigatório.</span></a>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/39959841/" target="_blank" rel="noreferrer"><b>Parciais alongadas</b><span>Wolf et al., 2025 — parciais na posição alongada geraram adaptações semelhantes à amplitude completa em treinados.</span></a>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/41646176/" target="_blank" rel="noreferrer"><b>Comprimento muscular</b><span>Revisão sistemática — treinar em comprimentos longos tende a favorecer a hipertrofia.</span></a>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/?term=Maeo+greater+hamstrings+muscle+hypertrophy+long+versus+short+muscle+lengths" target="_blank" rel="noreferrer"><b>Flexora sentada</b><span>Maeo et al., 2021 — flexora sentada gerou mais hipertrofia dos posteriores que a deitada.</span></a>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/?term=Maeo+triceps+brachii+hypertrophy+overhead+neutral+arm+position" target="_blank" rel="noreferrer"><b>Tríceps acima da cabeça</b><span>Maeo et al., 2022 — extensões com braço acima da cabeça geraram hipertrofia bem maior do tríceps.</span></a>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/37015016/" target="_blank" rel="noreferrer"><b>Panturrilhas</b><span>Kassiano et al., 2023 — parciais na posição alongada superaram a amplitude completa no gastrocnêmio.</span></a>
+        <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10753835/" target="_blank" rel="noreferrer"><b>Panturrilha em pé × sentada</b><span>A versão em pé produziu mais hipertrofia total do tríceps sural — por isso é a base da semana.</span></a>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/39205815/" target="_blank" rel="noreferrer"><b>Intervalo entre séries</b><span>Singer et al., 2024 — descansos acima de 60 s apresentam pequena vantagem hipertrófica.</span></a>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/37582807/" target="_blank" rel="noreferrer"><b>Máquinas × pesos livres</b><span>Hipertrofia semelhante; máquinas facilitam estabilidade e treinar perto da falha com segurança.</span></a>
+        <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10809978/" target="_blank" rel="noreferrer"><b>Deload</b><span>Coleman et al., 2024 — uma semana sem treino não aumentou a hipertrofia; use o deload para fadiga, não por calendário.</span></a>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/28698222/" target="_blank" rel="noreferrer"><b>Proteína</b><span>Morton et al., 2018 — ganhos estabilizam por volta de 1,6 g/kg/dia.</span></a>
+      </div>
+      <p class="disclaimer">Plano para praticante avançado e saudável. Dor articular, dor lombar ou perda de controle encerram a série. Ajuste cargas e exercícios com um profissional presencial quando necessário.</p>
+    </section>
+  </main>
+
+  <footer><span>HIPERTROFIA INSANA</span><p>Consistência brutal. Execução inteligente.</p></footer>
+
+  <div class="rest-timer" id="restTimer" role="timer" aria-live="polite">
+    <div class="timer-info"><small id="timerLabel"></small><strong id="timerValue">0:00</strong></div>
+    <button type="button" id="timerAdd">+30 s</button>
+    <button type="button" id="timerClose" aria-label="Fechar cronômetro">✕</button>
+    <span class="timer-track"><span id="timerBar"></span></span>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
