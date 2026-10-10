@@ -20,6 +20,7 @@
     </a>
     <div class="top-actions">
       <span class="science-badge"><i></i> BASEADO EM EVIDÊNCIAS · 2026</span>
+      <button class="nav-diet-btn" id="navDietBtn" type="button" onclick="toggleDiet()">🥩 DIETA</button>
       <button class="icon-button" id="resetButton" type="button" title="Limpar checklist do dia" aria-label="Limpar checklist do dia">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.34 5.66M20 4v7h-7"/></svg>
       </button>
@@ -134,6 +135,378 @@
       </div>
       <p class="disclaimer">Plano para praticante avançado e saudável. Dor articular, dor lombar ou perda de controle encerram a série. Ajuste cargas e exercícios com um profissional presencial quando necessário.</p>
     </section>
+    <!-- ══ SEÇÃO DIETA ══ -->
+    <section class="diet-section" id="dietSection" style="display:none" aria-labelledby="dietTitle">
+      <div class="diet-hero">
+        <div>
+          <p class="eyebrow">PROTOCOLO NUTRICIONAL · 89 kg · 20% BF</p>
+          <h2 id="dietTitle">Dieta para Hipertrofia</h2>
+          <p class="hero-text">~3 300 kcal · <b>220 g proteína</b> · 400 g carbs · 90 g gordura — superávit controlado para maximizar massa magra com mínimo acúmulo de gordura.</p>
+        </div>
+        <div class="diet-macros" aria-label="Macros diários">
+          <div><strong>3 300</strong><span>kcal / dia</span></div>
+          <div><strong>220g</strong><span>proteína</span></div>
+          <div><strong>400g</strong><span>carboidratos</span></div>
+          <div><strong>90g</strong><span>gorduras</span></div>
+        </div>
+      </div>
+
+      <!-- REFEIÇÕES -->
+      <div class="meals-grid">
+
+        <!-- 04:00 PRÉ-TREINO -->
+        <article class="meal-card pre-workout">
+          <div class="meal-time">04:00</div>
+          <div class="meal-tag">PRÉ-TREINO</div>
+          <h3 class="meal-title">Pré-Treino</h3>
+          <ul class="meal-items">
+            <li>
+              <span class="food-name">Banana</span>
+              <span class="food-qty">2 unid (~180 g)</span>
+              <button class="sub-toggle" onclick="toggleDietSubs('sub-banana-pre')" type="button">trocar</button>
+              <ul class="subs-list" id="sub-banana-pre">
+                <li>Tâmara 4 unid</li>
+                <li>Manga 150 g</li>
+                <li>Pão integral 2 fatias</li>
+              </ul>
+            </li>
+            <li>
+              <span class="food-name">Whey protein <em class="optional">(opcional)</em></span>
+              <span class="food-qty">1 scoop (30 g)</span>
+              <button class="sub-toggle" onclick="toggleDietSubs('sub-whey-pre')" type="button">trocar</button>
+              <ul class="subs-list" id="sub-whey-pre">
+                <li>Claras de ovo 3 unid</li>
+                <li>Iogurte grego 100 g</li>
+                <li>Leite desnatado 200 ml</li>
+              </ul>
+            </li>
+          </ul>
+          <div class="supp-block">
+            <span class="supp-label">SUPLEMENTOS</span>
+            <div class="supp-item"><b>Citrulina malato</b> <span>6–8 g · 30–45 min antes do treino · vasodilatação e resistência</span></div>
+            <div class="supp-item"><b>Cafeína</b> <span>200 mg · em jejum ou com a banana</span></div>
+          </div>
+        </article>
+
+        <!-- 05:00-07:00 TREINO -->
+        <article class="meal-card training-block">
+          <div class="meal-time">05:00 – 07:00</div>
+          <div class="meal-tag training-tag">🏋️ TREINO</div>
+          <h3 class="meal-title">Janela de Treino</h3>
+          <p class="meal-note">Água 500–700 ml durante o treino. Creatina pode ser tomada aqui ou no pós-treino — o momento não faz diferença.</p>
+          <div class="supp-block">
+            <span class="supp-label">SUPLEMENTO OPCIONAL</span>
+            <div class="supp-item"><b>Creatina</b> <span>5 g · pode misturar no shake pós ou tomar com água agora</span></div>
+          </div>
+        </article>
+
+        <!-- 07:00 PÓS-TREINO -->
+        <article class="meal-card post-workout">
+          <div class="meal-time">07:00</div>
+          <div class="meal-tag">PÓS-TREINO</div>
+          <h3 class="meal-title">Shake Pós-Treino</h3>
+          <ul class="meal-items">
+            <li>
+              <span class="food-name">Whey protein</span>
+              <span class="food-qty">2 scoops (60 g)</span>
+              <button class="sub-toggle" onclick="toggleDietSubs('sub-whey-pos')" type="button">trocar</button>
+              <ul class="subs-list" id="sub-whey-pos">
+                <li>Frango cozido 200 g + shake simples</li>
+                <li>Ovo mexido 4 unid</li>
+                <li>Iogurte grego 300 g</li>
+              </ul>
+            </li>
+            <li>
+              <span class="food-name">Banana</span>
+              <span class="food-qty">2 unid (~180 g)</span>
+              <button class="sub-toggle" onclick="toggleDietSubs('sub-banana-pos')" type="button">trocar</button>
+              <ul class="subs-list" id="sub-banana-pos">
+                <li>Aveia 80 g + água</li>
+                <li>Arroz cozido 150 g</li>
+                <li>Batata doce 150 g cozida</li>
+              </ul>
+            </li>
+          </ul>
+          <div class="supp-block">
+            <span class="supp-label">SUPLEMENTOS</span>
+            <div class="supp-item"><b>Creatina</b> <span>5 g · se não tomou durante o treino</span></div>
+            <div class="supp-item"><b>NAC</b> <span>500 mg · antioxidante, reduz estresse oxidativo pós-exercício</span></div>
+          </div>
+        </article>
+
+        <!-- 09:00 CAFÉ DA MANHÃ -->
+        <article class="meal-card">
+          <div class="meal-time">09:00</div>
+          <div class="meal-tag">CAFÉ DA MANHÃ</div>
+          <h3 class="meal-title">Café da Manhã Sólido</h3>
+          <ul class="meal-items">
+            <li>
+              <span class="food-name">Ovos inteiros</span>
+              <span class="food-qty">4 unid</span>
+              <button class="sub-toggle" onclick="toggleDietSubs('sub-ovos-9h')" type="button">trocar</button>
+              <ul class="subs-list" id="sub-ovos-9h">
+                <li>Claras 6 unid + 1 gema</li>
+                <li>Omelete com queijo cottage</li>
+                <li>Frango desfiado 150 g</li>
+              </ul>
+            </li>
+            <li>
+              <span class="food-name">Aveia em flocos</span>
+              <span class="food-qty">80 g</span>
+              <button class="sub-toggle" onclick="toggleDietSubs('sub-aveia-9h')" type="button">trocar</button>
+              <ul class="subs-list" id="sub-aveia-9h">
+                <li>Mingau de aveia com frutas</li>
+                <li>Tapioca 2 unid (80 g)</li>
+                <li>Pão integral 3 fatias</li>
+              </ul>
+            </li>
+            <li>
+              <span class="food-name">Fruta</span>
+              <span class="food-qty">1 porção média</span>
+              <button class="sub-toggle" onclick="toggleDietSubs('sub-fruta-9h')" type="button">trocar</button>
+              <ul class="subs-list" id="sub-fruta-9h">
+                <li>Mamão 150 g</li>
+                <li>Maçã 1 unid</li>
+                <li>Abacaxi 150 g</li>
+              </ul>
+            </li>
+          </ul>
+          <div class="supp-block">
+            <span class="supp-label">SUPLEMENTOS</span>
+            <div class="supp-item"><b>Vitamina D3+K2</b> <span>1 cápsula · com refeição gordurosa para absorção</span></div>
+            <div class="supp-item"><b>Ômega 3</b> <span>2 cápsulas · com a refeição para reduzir refluxo</span></div>
+          </div>
+        </article>
+
+        <!-- 10:00 LANCHE -->
+        <article class="meal-card">
+          <div class="meal-time">10:00</div>
+          <div class="meal-tag">LANCHE</div>
+          <h3 class="meal-title">Lanche da Manhã</h3>
+          <ul class="meal-items">
+            <li>
+              <span class="food-name">Frango grelhado</span>
+              <span class="food-qty">150 g</span>
+              <button class="sub-toggle" onclick="toggleDietSubs('sub-frango-10h')" type="button">trocar</button>
+              <ul class="subs-list" id="sub-frango-10h">
+                <li>Atum em lata (natural) 1 lata (150 g)</li>
+                <li>Tilápia/merluza cozida 150 g</li>
+                <li>Peito de peru 120 g + cottage</li>
+              </ul>
+            </li>
+            <li>
+              <span class="food-name">Batata doce cozida</span>
+              <span class="food-qty">150 g</span>
+              <button class="sub-toggle" onclick="toggleDietSubs('sub-batatadoce-10h')" type="button">trocar</button>
+              <ul class="subs-list" id="sub-batatadoce-10h">
+                <li>Mandioca cozida 150 g</li>
+                <li>Inhame cozido 150 g</li>
+                <li>Arroz integral 100 g cozido</li>
+              </ul>
+            </li>
+            <li>
+              <span class="food-name">Iogurte grego natural</span>
+              <span class="food-qty">150 g</span>
+              <button class="sub-toggle" onclick="toggleDietSubs('sub-iogurte-10h')" type="button">trocar</button>
+              <ul class="subs-list" id="sub-iogurte-10h">
+                <li>Cottage 150 g</li>
+                <li>Queijo minas frescal 80 g</li>
+                <li>Leite desnatado 200 ml</li>
+              </ul>
+            </li>
+          </ul>
+        </article>
+
+        <!-- 13:00 ALMOÇO -->
+        <article class="meal-card">
+          <div class="meal-time">13:00</div>
+          <div class="meal-tag">ALMOÇO</div>
+          <h3 class="meal-title">Almoço Principal</h3>
+          <ul class="meal-items">
+            <li>
+              <span class="food-name">Carne bovina (patinho/alcatra)</span>
+              <span class="food-qty">200 g</span>
+              <button class="sub-toggle" onclick="toggleDietSubs('sub-carne-13h')" type="button">trocar</button>
+              <ul class="subs-list" id="sub-carne-13h">
+                <li>Frango grelhado 220 g</li>
+                <li>Tilápia assada 250 g</li>
+                <li>Carne moída refogada 200 g</li>
+              </ul>
+            </li>
+            <li>
+              <span class="food-name">Arroz branco cozido</span>
+              <span class="food-qty">200 g</span>
+              <button class="sub-toggle" onclick="toggleDietSubs('sub-arroz-13h')" type="button">trocar</button>
+              <ul class="subs-list" id="sub-arroz-13h">
+                <li>Arroz integral 160 g cozido</li>
+                <li>Macarrão integral 180 g cozido</li>
+                <li>Quinoa cozida 150 g</li>
+              </ul>
+            </li>
+            <li>
+              <span class="food-name">Feijão / lentilha</span>
+              <span class="food-qty">1 concha (~80 g cozido)</span>
+              <button class="sub-toggle" onclick="toggleDietSubs('sub-feijao-13h')" type="button">trocar</button>
+              <ul class="subs-list" id="sub-feijao-13h">
+                <li>Grão-de-bico cozido 80 g</li>
+                <li>Ervilha 80 g</li>
+                <li>Lentilha cozida 80 g</li>
+              </ul>
+            </li>
+            <li>
+              <span class="food-name">Salada verde + legumes</span>
+              <span class="food-qty">à vontade</span>
+            </li>
+            <li>
+              <span class="food-name">Azeite de oliva</span>
+              <span class="food-qty">1 colher sopa (10 ml)</span>
+            </li>
+          </ul>
+          <div class="supp-block">
+            <span class="supp-label">SUPLEMENTO</span>
+            <div class="supp-item"><b>Beta-Alanina</b> <span>3,2 g · COM a refeição — elimina a pinicação e mantém eficácia idêntica</span></div>
+          </div>
+        </article>
+
+        <!-- 16:00 LANCHE TARDE -->
+        <article class="meal-card">
+          <div class="meal-time">16:00</div>
+          <div class="meal-tag">LANCHE DA TARDE</div>
+          <h3 class="meal-title">Lanche da Tarde</h3>
+          <ul class="meal-items">
+            <li>
+              <span class="food-name">Iogurte grego natural</span>
+              <span class="food-qty">200 g</span>
+              <button class="sub-toggle" onclick="toggleDietSubs('sub-iogurte-16h')" type="button">trocar</button>
+              <ul class="subs-list" id="sub-iogurte-16h">
+                <li>Cottage 200 g</li>
+                <li>Queijo minas frescal 100 g + fruta</li>
+                <li>Leite desnatado 300 ml</li>
+              </ul>
+            </li>
+            <li>
+              <span class="food-name">Granola</span>
+              <span class="food-qty">30 g</span>
+              <button class="sub-toggle" onclick="toggleDietSubs('sub-granola-16h')" type="button">trocar</button>
+              <ul class="subs-list" id="sub-granola-16h">
+                <li>Aveia em flocos 30 g</li>
+                <li>Banana 1 unid</li>
+                <li>Mel 1 colher (15 g)</li>
+              </ul>
+            </li>
+            <li>
+              <span class="food-name">Castanha do Pará</span>
+              <span class="food-qty">20 g (~4 unid)</span>
+              <button class="sub-toggle" onclick="toggleDietSubs('sub-castanha-16h')" type="button">trocar</button>
+              <ul class="subs-list" id="sub-castanha-16h">
+                <li>Mix de nuts 20 g</li>
+                <li>Amêndoas 20 g</li>
+                <li>Pasta de amendoim 1 colher (15 g)</li>
+              </ul>
+            </li>
+          </ul>
+        </article>
+
+        <!-- 19:30 JANTAR -->
+        <article class="meal-card">
+          <div class="meal-time">19:30</div>
+          <div class="meal-tag">JANTAR</div>
+          <h3 class="meal-title">Jantar</h3>
+          <ul class="meal-items">
+            <li>
+              <span class="food-name">Frango / carne / peixe</span>
+              <span class="food-qty">200 g</span>
+              <button class="sub-toggle" onclick="toggleDietSubs('sub-prot-jantar')" type="button">trocar</button>
+              <ul class="subs-list" id="sub-prot-jantar">
+                <li>Salmão 180 g (extra ômega 3)</li>
+                <li>Atum fresco grelhado 200 g</li>
+                <li>Carne moída + ovo 2 unid</li>
+              </ul>
+            </li>
+            <li>
+              <span class="food-name">Arroz branco cozido</span>
+              <span class="food-qty">150 g</span>
+              <button class="sub-toggle" onclick="toggleDietSubs('sub-arroz-jantar')" type="button">trocar</button>
+              <ul class="subs-list" id="sub-arroz-jantar">
+                <li>Batata doce 150 g</li>
+                <li>Mandioca cozida 150 g</li>
+                <li>Macarrão integral 140 g cozido</li>
+              </ul>
+            </li>
+            <li>
+              <span class="food-name">Legumes refogados</span>
+              <span class="food-qty">150 g + fio de azeite</span>
+              <button class="sub-toggle" onclick="toggleDietSubs('sub-legumes-jantar')" type="button">trocar</button>
+              <ul class="subs-list" id="sub-legumes-jantar">
+                <li>Brócolis + cenoura 150 g</li>
+                <li>Abobrinha + pimentão 150 g</li>
+                <li>Salada crua à vontade</li>
+              </ul>
+            </li>
+            <li>
+              <span class="food-name">Ovos inteiros</span>
+              <span class="food-qty">2 unid</span>
+            </li>
+          </ul>
+        </article>
+
+        <!-- 21:30 CEIA -->
+        <article class="meal-card last-meal">
+          <div class="meal-time">21:30</div>
+          <div class="meal-tag">CEIA</div>
+          <h3 class="meal-title">Ceia — antes de dormir</h3>
+          <ul class="meal-items">
+            <li>
+              <span class="food-name">Cottage / iogurte grego</span>
+              <span class="food-qty">200 g</span>
+              <button class="sub-toggle" onclick="toggleDietSubs('sub-ceia-prot')" type="button">trocar</button>
+              <ul class="subs-list" id="sub-ceia-prot">
+                <li>Caseína 1 scoop (em água)</li>
+                <li>Claras de ovo 4 unid cozidas</li>
+                <li>Queijo minas frescal 100 g</li>
+              </ul>
+            </li>
+            <li>
+              <span class="food-name">Castanha do Pará / nozes</span>
+              <span class="food-qty">20 g</span>
+              <button class="sub-toggle" onclick="toggleDietSubs('sub-ceia-fat')" type="button">trocar</button>
+              <ul class="subs-list" id="sub-ceia-fat">
+                <li>Pasta de amendoim 15 g</li>
+                <li>Amêndoas 20 g</li>
+                <li>Abacate 60 g</li>
+              </ul>
+            </li>
+          </ul>
+          <div class="supp-block zma-block">
+            <span class="supp-label">SUPLEMENTO</span>
+            <div class="supp-item"><b>ZMA</b> <span>1 dose · 30–60 min antes de dormir · estômago vazio · não misturar com cálcio</span></div>
+          </div>
+        </article>
+
+      </div><!-- /meals-grid -->
+
+      <!-- RESUMO SUPLEMENTOS -->
+      <div class="supps-summary">
+        <div class="section-head" style="margin-bottom:20px">
+          <div>
+            <p class="eyebrow">GUIA COMPLETO</p>
+            <h2>Suplementos e horários</h2>
+          </div>
+        </div>
+        <div class="supps-grid">
+          <div class="supp-card"><div class="supp-icon">💊</div><h4>Citrulina Malato</h4><p>6–8 g às 03:15–03:30 (30–45 min pré-treino). Melhora bombeamento, reduz fadiga e aumenta o volume total de repetições.</p></div>
+          <div class="supp-card"><div class="supp-icon">⚡</div><h4>Cafeína</h4><p>200 mg às 04:00. Foco, força e resistência. Não use diariamente se tiver insônia ou taquicardia. Cicle 5–6 semanas on / 1 off.</p></div>
+          <div class="supp-card"><div class="supp-icon">🔥</div><h4>Beta-Alanina</h4><p>3,2 g no almoço (13:00) junto com a refeição — elimina a pinicação com eficácia idêntica. Acumula tecido muscular em 4–6 semanas.</p></div>
+          <div class="supp-card"><div class="supp-icon">🥤</div><h4>Whey Protein</h4><p>Pré opcional (1 scoop) + pós-treino (2 scoops). Whey isolado se tiver intolerância à lactose. Use para bater a meta proteica, não como substituto de comida.</p></div>
+          <div class="supp-card"><div class="supp-icon">💪</div><h4>Creatina</h4><p>5 g/dia. Horário flexível — consistência é o que importa. Preferencialmente pós-treino ou com a primeira refeição sólida. Não precisa fase de saturação.</p></div>
+          <div class="supp-card"><div class="supp-icon">🐟</div><h4>Ômega 3</h4><p>2 cápsulas no café das 09:00. Reduz inflamação, melhora recuperação muscular e saúde cardiovascular. Tome sempre com refeição gordurosa.</p></div>
+          <div class="supp-card"><div class="supp-icon">🛡️</div><h4>NAC (N-Acetil-Cisteína)</h4><p>500 mg pós-treino (07:00). Precursor da glutationa — antioxidante potente para recuperação. Pode causar náusea em jejum; tome com o shake.</p></div>
+          <div class="supp-card"><div class="supp-icon">☀️</div><h4>Vitamina D3 + K2</h4><p>1 cápsula no café das 09:00. K2 redireciona o cálcio para os ossos. Tome com refeição gordurosa para absorção máxima. D3 é lipossolúvel.</p></div>
+          <div class="supp-card"><div class="supp-icon">🌙</div><h4>ZMA</h4><p>1 dose às 21:30, 30–60 min antes de dormir, com estômago vazio. NÃO tome com cálcio (laticínios) — bloqueia a absorção do zinco e magnésio.</p></div>
+        </div>
+      </div>
+
+    </section><!-- /diet-section -->
   </main>
 
   <footer><span>HIPERTROFIA INSANA</span><p>Consistência brutal. Execução inteligente.</p></footer>

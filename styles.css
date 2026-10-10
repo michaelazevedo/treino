@@ -48,3 +48,30 @@ body{overflow-x:hidden}body:before{content:"";position:fixed;inset:0;pointer-eve
 @keyframes pulse{50%{box-shadow:0 0 0 6px rgba(255,99,50,.25),0 20px 60px rgba(0,0,0,.55)}}
 @media(max-width:900px){.tracker{grid-column:2/4}}
 @media(max-width:600px){.tracker{grid-column:1/-1;grid-template-columns:1fr 1fr auto}.tracker-hint{grid-column:1/-1;grid-row:2}.weekly-block{padding:14px 12px}.rest-timer{min-width:0;width:calc(100% - 24px)}}
+
+/* ══ DIETA ══ */
+.nav-diet-btn{height:36px;padding:0 14px;border:1px solid var(--acid);border-radius:9px;background:rgba(201,255,50,.08);color:var(--acid);font:700 .8rem Inter;letter-spacing:.06em;cursor:pointer;transition:.2s}.nav-diet-btn:hover,.nav-diet-btn.active{background:var(--acid);color:#090b0f}
+.diet-section{padding:48px 0 60px;border-top:1px solid var(--line)}
+.diet-hero{display:grid;grid-template-columns:1.4fr 1fr;align-items:center;gap:48px;margin-bottom:44px}
+.diet-macros{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}.diet-macros div{background:rgba(17,21,27,.94);padding:22px 12px;display:flex;flex-direction:column}.diet-macros strong{font:800 2rem "Barlow Condensed";color:var(--acid)}.diet-macros span{font-size:.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.meals-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px;margin-bottom:48px}
+.meal-card{background:linear-gradient(145deg,#141920,#0e1116);border:1px solid var(--line);border-radius:20px;padding:24px;position:relative;overflow:hidden}.meal-card::before{content:"";position:absolute;left:0;top:0;width:120px;height:2px;background:linear-gradient(90deg,var(--acid),transparent)}.meal-card.pre-workout{border-color:rgba(201,255,50,.25);background:linear-gradient(145deg,rgba(20,28,14,.9),rgba(14,18,10,.9))}.meal-card.post-workout{border-color:rgba(85,168,255,.25)}.meal-card.training-block{border-color:rgba(255,99,50,.25);background:linear-gradient(145deg,rgba(28,18,12,.9),rgba(18,12,8,.9))}.meal-card.last-meal{border-color:rgba(120,100,200,.25)}
+.meal-time{font:800 1.8rem "Barlow Condensed";color:var(--acid);line-height:1;margin-bottom:2px}
+.meal-tag{font:700 .66rem Inter;letter-spacing:.12em;color:var(--muted);text-transform:uppercase;margin-bottom:8px}.training-tag{color:var(--orange)}
+.meal-title{font:800 1.15rem "Barlow Condensed";text-transform:uppercase;margin:0 0 16px;color:var(--text)}
+.meal-items{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.meal-items li{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 8px}
+.food-name{font-weight:600;font-size:.9rem;color:var(--text)}.food-name .optional{font-style:italic;color:var(--muted);font-size:.78rem;font-weight:400}
+.food-qty{font-size:.8rem;color:var(--acid);font-weight:700;margin-left:auto}
+.sub-toggle{margin-left:6px;font:700 .64rem Inter;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);background:transparent;border:1px solid #353d47;border-radius:5px;padding:2px 6px;cursor:pointer;transition:.18s}.sub-toggle:hover{border-color:var(--acid);color:var(--acid)}
+.subs-list{display:none;width:100%;margin:4px 0 0;padding:8px 12px;background:rgba(201,255,50,.04);border-left:2px solid var(--acid);border-radius:0 6px 6px 0;list-style:disc;list-style-position:inside;font-size:.78rem;color:var(--muted);gap:4px;flex-direction:column}.subs-list.open{display:flex}
+.meal-note{font-size:.8rem;color:var(--muted);margin:0 0 14px;line-height:1.5}
+.supp-block{margin-top:16px;padding:12px 14px;background:rgba(255,255,255,.025);border:1px solid var(--line);border-radius:10px}
+.supp-label{display:block;font:700 .62rem Inter;letter-spacing:.12em;color:var(--acid);margin-bottom:8px}
+.supp-item{font-size:.8rem;margin-bottom:4px;color:var(--muted)}.supp-item b{color:var(--text)}
+.zma-block{border-color:rgba(120,100,200,.3);background:rgba(120,100,200,.05)}
+.supps-summary{border-top:1px solid var(--line);padding-top:40px}
+.supps-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.supp-card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px}.supp-icon{font-size:1.5rem;margin-bottom:8px}.supp-card h4{font:800 1rem "Barlow Condensed";text-transform:uppercase;margin:0 0 6px;color:var(--text)}.supp-card p{font-size:.78rem;color:var(--muted);margin:0;line-height:1.5}
+@media(max-width:900px){.diet-hero{grid-template-columns:1fr;gap:24px}.diet-macros{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.meals-grid{grid-template-columns:1fr}.diet-macros{grid-template-columns:repeat(2,1fr)}.supps-grid{grid-template-columns:repeat(2,1fr)}}

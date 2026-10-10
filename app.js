@@ -303,3 +303,30 @@ document.getElementById('resetButton').onclick=()=>{
 };
 function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1800)}
 render();
+
+// ── DIETA
+let dietOpen = false;
+function toggleDiet() {
+  dietOpen = !dietOpen;
+  const sec = document.getElementById('dietSection');
+  const btn = document.getElementById('navDietBtn');
+  if (dietOpen) {
+    sec.style.display = 'block';
+    btn.classList.add('active');
+    sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  } else {
+    sec.style.display = 'none';
+    btn.classList.remove('active');
+    document.getElementById('top').scrollIntoView({ behavior: 'smooth' });
+  }
+}
+
+function toggleDietSubs(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.classList.toggle('open');
+  const btn = el.previousElementSibling;
+  if (btn && btn.classList.contains('sub-toggle')) {
+    btn.textContent = el.classList.contains('open') ? 'fechar' : 'trocar';
+  }
+}
