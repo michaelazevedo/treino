@@ -181,11 +181,11 @@ const ppl6_pullA={short:'TER',day:'TERÇA-FEIRA',title:'Pull A — costas + bíc
 const ppl6_legsA={short:'QUA',day:'QUARTA-FEIRA',title:'Legs A — quadríceps + adutores + panturrilha',subtitle:'Quadríceps em profundidade máxima e posição alongada — extensora reclinada, Hack squat fundo. Adutores e panturrilhas completam.',exercises:[
   L.hack,L.legPress,X(L.extensora,4),X(L.adutora,3),X(L.pantPe,4),L.abdCabo]};
 
-const ppl6_pushB={short:'QUI',day:'QUINTA-FEIRA',title:'Push B — peito superior + ombro + tríceps',subtitle:'Ênfase no peitoral superior e deltoide lateral com variações complementares às de segunda. Segundo estímulo de tríceps.',exercises:[
-  L.supIncConv,L.peckDeck,X(L.latMaq,4),X(L.cruzInv,3),X(L.tricCorda,3),X(L.tricV,2)]};
+const ppl6_pushB={short:'QUI',day:'QUINTA-FEIRA',title:'Push B — peito superior + tríceps',subtitle:'Peito superior e tríceps como foco — sem ombro direto (já foi segunda). O supino e peck deck já estimulam o deltoide anterior indiretamente.',exercises:[
+  L.supIncConv,L.peckDeck,X(L.cruzCabo,3),X(L.tricCorda,3),X(L.tricFrances,2),X(L.tricV,2)]};
 
-const ppl6_pullB={short:'SEX',day:'SEXTA-FEIRA',title:'Pull B — costas + ombro posterior + bíceps',subtitle:'Pullover, remada baixa e crucifixo inverso. Segundo estímulo de bíceps com Bayesian — posição mais alongada que a Scott.',exercises:[
-  L.remBaixa,X(L.pullover,3),X(L.cruzInv,3),X(L.latMaq,3),X(L.roscaBayes,3),X(L.roscaScott,2)]};
+const ppl6_pullB={short:'SEX',day:'SEXTA-FEIRA',title:'Pull B — costas + bíceps',subtitle:'Remada baixa, pullover e puxada unilateral. Sem ombro posterior direto (já foi terça). Bíceps com Bayesian completa o segundo estímulo.',exercises:[
+  L.remBaixa,X(L.pullover,3),L.puxUni,X(L.roscaBayes,3),X(L.roscaScott,2)]};
 
 const ppl6_legsB={short:'SÁB',day:'SÁBADO',title:'Legs B — posteriores + quadríceps + panturrilha',subtitle:'Posteriores em posição alongada como prioridade. Segundo estímulo de quadríceps com pendular e extensora unilateral.',exercises:[
   X(L.flexSent,4),L.flexPe,L.mesaFlex,L.pendular,L.extUni,X(L.adutora,2),L.pantLP,L.pantSent,X(L.abdCabo,2)]};
