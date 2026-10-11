@@ -170,25 +170,101 @@ const planFB={
   sabado:off('SÁBADO','SÁB'),domingo:off('DOMINGO','DOM')
 };
 
-// ── PPL 6 DIAS (enhanced · 20–30 séries/músculo/semana)
-// Push A/B · Pull A/B · Legs A/B — cada músculo 2× com variações complementares
-const ppl6_pushA={short:'SEG',day:'SEGUNDA-FEIRA',title:'Push A — peito + ombro + tríceps',subtitle:'Peito como prioridade: 3 compostos + isolador. Volume total de peito acima de 12 séries na semana com Push B.',exercises:[
-  L.supIncSmith,L.chestPress,L.cruzCabo,X(L.latCabo,4),X(L.tricFrances,3),X(L.tricV,2)]};
+// ── PPL 6 DIAS (enhanced · evidência-based)
+// Princípios: 2× por músculo, ≥48h entre estímulos, volume direto controlado
+// Músculos pequenos (bíceps, tríceps, ombro): 6–8 séries diretas/semana + indiretas dos compostos
+// Músculos grandes (peito, costas, quad, post): 10–14 séries diretas/semana
+//
+// Mapa de intervalos:
+//   Peito:    Seg → Qui  (72h) ✓
+//   Costas:   Ter → Sex  (72h) ✓
+//   Pernas:   Qua → Sáb  (72h) ✓
+//   Ombro lat: Seg → (indireto Qui) — sem 2ª série direta, já atinge 8–10s com indiretas
+//   Ombro post: Ter → (indireto Sex) — idem
+//   Tríceps:  Seg 3s diretas + indiretas supinos Qui = suficiente (~8–10s semana)
+//   Bíceps:   Ter 3s diretas + indiretas puxadas Sex = suficiente (~8–10s semana)
 
-const ppl6_pullA={short:'TER',day:'TERÇA-FEIRA',title:'Pull A — costas + bíceps',subtitle:'Puxadas e remadas pesadas. Frequência alta de costas permite volume semanal de 18–22 séries sem sobrecarga de recuperação.',exercises:[
-  L.puxNeutra,L.remArt,L.puxUni,L.encMaq,X(L.roscaInc,3),L.roscaScott]};
+const ppl6_pushA={
+  short:'SEG',day:'SEGUNDA-FEIRA',
+  title:'Push A — peito + ombro lateral + tríceps',
+  subtitle:'Peito com 3 exercícios compostos/isoladores. Ombro lateral com 2 séries diretas. Tríceps com 3 séries diretas — os supinos da quinta completam o volume indiretamente.',
+  exercises:[
+    L.supIncSmith,       // Peito 3s — composto principal
+    L.chestPress,        // Peito 3s
+    L.cruzCabo,          // Peito 3s — isolador alongado
+    X(L.latCabo,3),      // Ombro lateral 3s diretas
+    X(L.tricFrances,3),  // Tríceps 3s diretas (acima da cabeça = cabeça longa)
+  ]
+};
 
-const ppl6_legsA={short:'QUA',day:'QUARTA-FEIRA',title:'Legs A — quadríceps + adutores + panturrilha',subtitle:'Quadríceps em profundidade máxima e posição alongada — extensora reclinada, Hack squat fundo. Adutores e panturrilhas completam.',exercises:[
-  L.hack,L.legPress,X(L.extensora,4),X(L.adutora,3),X(L.pantPe,4),L.abdCabo]};
+const ppl6_pullA={
+  short:'TER',day:'TERÇA-FEIRA',
+  title:'Pull A — costas + ombro posterior + bíceps',
+  subtitle:'Costas com 3 exercícios. Ombro posterior 2s diretas. Bíceps 3s diretas — as puxadas da sexta completam o volume indiretamente.',
+  exercises:[
+    L.puxNeutra,         // Costas 3s — composto principal
+    L.remArt,            // Costas 3s
+    X(L.cruzInv,2),      // Ombro posterior 2s diretas
+    L.encMaq,            // Trapézio 3s
+    X(L.roscaInc,3),     // Bíceps 3s diretas (posição alongada)
+  ]
+};
 
-const ppl6_pushB={short:'QUI',day:'QUINTA-FEIRA',title:'Push B — peito superior + tríceps',subtitle:'Peito superior e tríceps como foco — sem ombro direto (já foi segunda). O supino e peck deck já estimulam o deltoide anterior indiretamente.',exercises:[
-  L.supIncConv,L.peckDeck,X(L.cruzCabo,3),X(L.tricCorda,3),X(L.tricFrances,2),X(L.tricV,2)]};
+const ppl6_legsA={
+  short:'QUA',day:'QUARTA-FEIRA',
+  title:'Legs A — quadríceps + adutores + panturrilha',
+  subtitle:'Quad como prioridade: Hack fundo + Leg press + Extensora reclinada. Adutores e panturrilha completam. Sem posteriores — recuperam para sábado.',
+  exercises:[
+    L.hack,              // Quad 3s
+    L.legPress,          // Quad 3s
+    X(L.extensora,3),    // Quad 3s — posição alongada
+    X(L.adutora,2),      // Adutores 2s
+    X(L.pantPe,3),       // Panturrilha 3s
+    L.abdCabo,           // Abdômen 3s
+  ]
+};
 
-const ppl6_pullB={short:'SEX',day:'SEXTA-FEIRA',title:'Pull B — costas + bíceps',subtitle:'Remada baixa, pullover e puxada unilateral. Sem ombro posterior direto (já foi terça). Bíceps com Bayesian completa o segundo estímulo.',exercises:[
-  L.remBaixa,X(L.pullover,3),L.puxUni,X(L.roscaBayes,3),X(L.roscaScott,2)]};
+const ppl6_pushB={
+  short:'QUI',day:'QUINTA-FEIRA',
+  title:'Push B — peito superior + tríceps',
+  subtitle:'Segundo estímulo de peito com variações complementares (superior + peck deck). Tríceps recebe 3s diretas + todo o estímulo indireto dos supinos = ~9–10s semanais. Sem ombro direto — já recuperou 72h e recebe indireto dos supinos.',
+  exercises:[
+    L.supIncConv,        // Peito superior 3s
+    L.peckDeck,          // Peito 3s — isolador
+    X(L.latMaq,3),       // Ombro lateral 3s — 72h desde seg ✓
+    X(L.tricCorda,3),    // Tríceps 3s diretas (acima da cabeça)
+    X(L.tricV,2),        // Tríceps 2s — finalizador
+  ]
+};
 
-const ppl6_legsB={short:'SÁB',day:'SÁBADO',title:'Legs B — posteriores + quadríceps + panturrilha',subtitle:'Posteriores em posição alongada como prioridade. Segundo estímulo de quadríceps com pendular e extensora unilateral.',exercises:[
-  X(L.flexSent,4),L.flexPe,L.mesaFlex,L.pendular,L.extUni,X(L.adutora,2),L.pantLP,L.pantSent,X(L.abdCabo,2)]};
+const ppl6_pullB={
+  short:'SEX',day:'SEXTA-FEIRA',
+  title:'Pull B — costas + bíceps',
+  subtitle:'Segundo estímulo de costas com variações complementares (remada baixa + pullover). Bíceps recebe 3s diretas + indireto de todas as puxadas = ~9–10s semanais. Sem ombro posterior direto — 72h desde ter, recebe indireto das remadas.',
+  exercises:[
+    L.remBaixa,          // Costas 3s
+    X(L.pullover,3),     // Costas 3s — grande dorsal em alongamento
+    L.puxUni,            // Costas 2s — unilateral
+    X(L.roscaBayes,3),   // Bíceps 3s diretas (Bayesian = posição alongada)
+  ]
+};
+
+const ppl6_legsB={
+  short:'SÁB',day:'SÁBADO',
+  title:'Legs B — posteriores + quadríceps + panturrilha',
+  subtitle:'Posteriores como prioridade: flexora sentada (posição alongada) + flexora em pé + mesa flexora. Segundo estímulo de quad com pendular e extensora unilateral. 72h desde qua para todos os grupos ✓',
+  exercises:[
+    X(L.flexSent,4),     // Post 4s — posição alongada, prioridade
+    L.flexPe,            // Post 3s — unilateral
+    L.mesaFlex,          // Post 3s
+    L.pendular,          // Quad 3s
+    L.extUni,            // Quad 2s
+    X(L.adutora,2),      // Adutores 2s
+    L.pantLP,            // Panturrilha 3s
+    L.pantSent,          // Panturrilha sóleo 2s
+    X(L.abdCabo,2),      // Abdômen 2s
+  ]
+};
 
 const planPPL6={
   segunda:ppl6_pushA,terca:ppl6_pullA,quarta:ppl6_legsA,
