@@ -170,7 +170,34 @@ const planFB={
   sabado:off('SÁBADO','SÁB'),domingo:off('DOMINGO','DOM')
 };
 
+// ── PPL 6 DIAS (enhanced · 20–30 séries/músculo/semana)
+// Push A/B · Pull A/B · Legs A/B — cada músculo 2× com variações complementares
+const ppl6_pushA={short:'SEG',day:'SEGUNDA-FEIRA',title:'Push A — peito + ombro + tríceps',subtitle:'Peito como prioridade: 3 compostos + isolador. Volume total de peito acima de 12 séries na semana com Push B.',exercises:[
+  L.supIncSmith,L.chestPress,L.cruzCabo,X(L.latCabo,4),X(L.tricFrances,3),X(L.tricV,2)]};
+
+const ppl6_pullA={short:'TER',day:'TERÇA-FEIRA',title:'Pull A — costas + bíceps',subtitle:'Puxadas e remadas pesadas. Frequência alta de costas permite volume semanal de 18–22 séries sem sobrecarga de recuperação.',exercises:[
+  L.puxNeutra,L.remArt,L.puxUni,L.encMaq,X(L.roscaInc,3),L.roscaScott]};
+
+const ppl6_legsA={short:'QUA',day:'QUARTA-FEIRA',title:'Legs A — quadríceps + adutores + panturrilha',subtitle:'Quadríceps em profundidade máxima e posição alongada — extensora reclinada, Hack squat fundo. Adutores e panturrilhas completam.',exercises:[
+  L.hack,L.legPress,X(L.extensora,4),X(L.adutora,3),X(L.pantPe,4),L.abdCabo]};
+
+const ppl6_pushB={short:'QUI',day:'QUINTA-FEIRA',title:'Push B — peito superior + ombro + tríceps',subtitle:'Ênfase no peitoral superior e deltoide lateral com variações complementares às de segunda. Segundo estímulo de tríceps.',exercises:[
+  L.supIncConv,L.peckDeck,X(L.latMaq,4),X(L.cruzInv,3),X(L.tricCorda,3),X(L.tricV,2)]};
+
+const ppl6_pullB={short:'SEX',day:'SEXTA-FEIRA',title:'Pull B — costas + ombro posterior + bíceps',subtitle:'Pullover, remada baixa e crucifixo inverso. Segundo estímulo de bíceps com Bayesian — posição mais alongada que a Scott.',exercises:[
+  L.remBaixa,X(L.pullover,3),X(L.cruzInv,3),X(L.latMaq,3),X(L.roscaBayes,3),X(L.roscaScott,2)]};
+
+const ppl6_legsB={short:'SÁB',day:'SÁBADO',title:'Legs B — posteriores + quadríceps + panturrilha',subtitle:'Posteriores em posição alongada como prioridade. Segundo estímulo de quadríceps com pendular e extensora unilateral.',exercises:[
+  X(L.flexSent,4),L.flexPe,L.mesaFlex,L.pendular,L.extUni,X(L.adutora,2),L.pantLP,L.pantSent,X(L.abdCabo,2)]};
+
+const planPPL6={
+  segunda:ppl6_pushA,terca:ppl6_pullA,quarta:ppl6_legsA,
+  quinta:ppl6_pushB,sexta:ppl6_pullB,sabado:ppl6_legsB,
+  domingo:off('DOMINGO','DOM','Descanso — recuperação ativa')
+};
+
 const schedules={
+  ppl6x:{plan:planPPL6,description:'PPL 6 dias: Push A · Pull A · Legs A · Push B · Pull B · Legs B. Cada músculo 2× · 20–30 séries/semana · indicado para usuários de hormônios.'},
   padrao:{plan:planA,description:'Push · Pernas A · Pull · descanso · Pernas B · Upper · descanso. Cada músculo 2× na semana, maior volume total.'},
   pernas2x:{plan:planUL,description:'Upper A · Lower A · descanso · Upper B · Lower B. Tudo 2× na semana com 4 sessões.'},
   pernas1x:{plan:planPPLU,description:'Push · Pull · descanso · Pernas · Upper. Superiores 2×, pernas 1× — escolha se prioriza o tronco.'},
