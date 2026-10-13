@@ -31,10 +31,12 @@ const L={
   latCabo:E('Elevação lateral unilateral no cabo','Ombro lateral',3,'12–20','60–90 s','0–1','Cabo passando atrás do corpo, começando com o braço cruzado à frente (posição alongada). Conduza pelo cotovelo até a linha do ombro.'),
   latMaq:E('Elevação lateral na máquina','Ombro lateral',3,'12–20','60–90 s','0–1','Ombros baixos e cotovelos guiando. Última série: drop-set retirando 25–30% da carga.'),
   cruzInv:E('Crucifixo inverso na máquina','Ombro posterior',3,'12–20','60–90 s','0–1','Pegada neutra e peito apoiado. Abra em arco sem retrair demais as escápulas para manter o foco no deltoide posterior.'),
+  latInclinado:E('Elevação lateral com halter deitado inclinado','Ombro lateral',2,'15–20','60 s','0–1','Banco a 30–45°, deite de lado. O braço começa na posição mais baixa possível — máximo alongamento do deltoide lateral. Suba até a linha do ombro sem impulso. Melhor posição de alongamento para o deltoide lateral dentre todos os exercícios.'),
   // TRÍCEPS
   tricFrances:E('Tríceps francês no cabo','Tríceps',3,'10–15','90 s','0–1','De costas para a polia, braços acima da cabeça: a cabeça longa trabalha alongada — cresceu bem mais que no pushdown nos estudos.'),
   tricV:E('Tríceps na barra V','Tríceps',2,'8–12','90 s','0','Cotovelos fixos ao lado do tronco. Última série com myo-reps: até a falha + 3–4 mini-séries de 3–5 reps com 5 respirações de pausa.'),
   tricCorda:E('Tríceps corda acima da cabeça','Tríceps',3,'10–15','90 s','0–1','Tronco inclinado à frente, cotovelos apontando para cima. Alongue totalmente atrás da cabeça.'),
+  tricSupinado:E('Pushdown supinado no cabo','Tríceps',2,'12–15','75 s','0','Pegada supinada (palmas para cima) na barra reta ou corda. Cotovelos fixos ao lado, extend totalmente. A supinação aumenta o recrutamento da cabeça lateral — complemento perfeito ao francês que foca a cabeça longa.'),
   // COSTAS
   puxNeutra:E('Puxada alta com pegada neutra','Costas',3,'6–10','2–3 min','1–2','Alongue no topo deixando a escápula subir; puxe os cotovelos em direção ao quadril sem balançar o tronco.'),
   remArt:E('Remada articulada com peito apoiado','Costas',3,'8–12','2 min','0–1','Peito colado no apoio, lombar fora do jogo. Alongue à frente e puxe até os cotovelos passarem o tronco. Última série: rest-pause.'),
@@ -172,41 +174,43 @@ const planFB={
 
 // ── PPL 6 DIAS (enhanced · evidência-based)
 // Princípios: 2× por músculo, ≥48h entre estímulos, volume direto controlado
-// Músculos pequenos (bíceps, tríceps, ombro): 6–8 séries diretas/semana + indiretas dos compostos
-// Músculos grandes (peito, costas, quad, post): 10–14 séries diretas/semana
+// Volume semanal direto atualizado (v3):
+//   Ombro lateral: Seg (cabo 3s + inclinado 2s) + Qui (máquina 3s + cabo 3s) = 11s diretas
+//   Tríceps:       Seg (francês 3s + supinado 2s) + Qui (corda 3s + barraV 2s) = 10s diretas
+//   Bíceps:        Ter (inclinada 3s + Scott 2s) + Sex (Bayesian 3s + Scott 2s) = 10s diretas
+//   Peito:         Seg (3+3+3) + Qui (3+3) = 15s diretas
+//   Costas:        Ter (3+3) + Sex (3+3+2) = 14s diretas
 //
-// Mapa de intervalos:
-//   Peito:    Seg → Qui  (72h) ✓
-//   Costas:   Ter → Sex  (72h) ✓
-//   Pernas:   Qua → Sáb  (72h) ✓
-//   Ombro lat: Seg → (indireto Qui) — sem 2ª série direta, já atinge 8–10s com indiretas
-//   Ombro post: Ter → (indireto Sex) — idem
-//   Tríceps:  Seg 3s diretas + indiretas supinos Qui = suficiente (~8–10s semana)
-//   Bíceps:   Ter 3s diretas + indiretas puxadas Sex = suficiente (~8–10s semana)
+// Mapa de intervalos (todos ≥72h):
+//   Peito:     Seg → Qui ✓   Costas:  Ter → Sex ✓   Pernas: Qua → Sáb ✓
+//   Ombro lat: Seg → Qui ✓   Tríceps: Seg → Qui ✓   Bíceps: Ter → Sex ✓
 
 const ppl6_pushA={
   short:'SEG',day:'SEGUNDA-FEIRA',
   title:'Push A — peito + ombro lateral + tríceps',
-  subtitle:'Peito com 3 exercícios compostos/isoladores. Ombro lateral com 2 séries diretas. Tríceps com 3 séries diretas — os supinos da quinta completam o volume indiretamente.',
+  subtitle:'Peito com 3 exercícios. Ombro lateral: cabo (3s) + deitado inclinado (2s) = máximo alongamento. Tríceps: francês cabeça longa (3s) + pushdown supinado cabeça lateral (2s) — cobertura total das 3 cabeças.',
   exercises:[
-    L.supIncSmith,       // Peito 3s — composto principal
-    L.chestPress,        // Peito 3s
-    L.cruzCabo,          // Peito 3s — isolador alongado
-    X(L.latCabo,3),      // Ombro lateral 3s diretas
-    X(L.tricFrances,3),  // Tríceps 3s diretas (acima da cabeça = cabeça longa)
+    L.supIncSmith,         // Peito 3s — composto principal
+    L.chestPress,          // Peito 3s
+    L.cruzCabo,            // Peito 3s — isolador alongado
+    X(L.latCabo,3),        // Ombro lateral 3s — posição alongada no cabo
+    X(L.latInclinado,2),   // Ombro lateral 2s — MAX alongamento (novo)
+    X(L.tricFrances,3),    // Tríceps 3s — cabeça longa (acima da cabeça)
+    X(L.tricSupinado,2),   // Tríceps 2s — cabeça lateral (pushdown supinado, novo)
   ]
 };
 
 const ppl6_pullA={
   short:'TER',day:'TERÇA-FEIRA',
   title:'Pull A — costas + ombro posterior + bíceps',
-  subtitle:'Costas com 3 exercícios. Ombro posterior 2s diretas. Bíceps 3s diretas — as puxadas da sexta completam o volume indiretamente.',
+  subtitle:'Costas com 3 exercícios. Ombro posterior 2s diretas. Bíceps: rosca inclinada alongada (3s) + Scott máquina encurtado (2s) — cobertura dos dois extremos da curva de força.',
   exercises:[
     L.puxNeutra,         // Costas 3s — composto principal
     L.remArt,            // Costas 3s
     X(L.cruzInv,2),      // Ombro posterior 2s diretas
     L.encMaq,            // Trapézio 3s
-    X(L.roscaInc,3),     // Bíceps 3s diretas (posição alongada)
+    X(L.roscaInc,3),     // Bíceps 3s — posição alongada (banco 45°)
+    X(L.roscaScott,2),   // Bíceps 2s — posição encurtada/pico (novo)
   ]
 };
 
@@ -226,13 +230,14 @@ const ppl6_legsA={
 
 const ppl6_pushB={
   short:'QUI',day:'QUINTA-FEIRA',
-  title:'Push B — peito superior + tríceps',
-  subtitle:'Segundo estímulo de peito com variações complementares (superior + peck deck). Tríceps recebe 3s diretas + todo o estímulo indireto dos supinos = ~9–10s semanais. Sem ombro direto — já recuperou 72h e recebe indireto dos supinos.',
+  title:'Push B — peito superior + ombro + tríceps',
+  subtitle:'Segundo estímulo de peito. Ombro lateral: máquina (3s) + cabo unilateral (3s) = 72h desde seg ✓. Tríceps: corda acima da cabeça (3s) + barra V finalizador (2s).',
   exercises:[
     L.supIncConv,        // Peito superior 3s
     L.peckDeck,          // Peito 3s — isolador
-    X(L.latMaq,3),       // Ombro lateral 3s — 72h desde seg ✓
-    X(L.tricCorda,3),    // Tríceps 3s diretas (acima da cabeça)
+    X(L.latMaq,3),       // Ombro lateral 3s — máquina, 72h desde seg ✓
+    X(L.latCabo,3),      // Ombro lateral 3s — cabo unilateral (novo, 72h ✓)
+    X(L.tricCorda,3),    // Tríceps 3s — cabeça longa acima da cabeça
     X(L.tricV,2),        // Tríceps 2s — finalizador
   ]
 };
@@ -240,12 +245,13 @@ const ppl6_pushB={
 const ppl6_pullB={
   short:'SEX',day:'SEXTA-FEIRA',
   title:'Pull B — costas + bíceps',
-  subtitle:'Segundo estímulo de costas com variações complementares (remada baixa + pullover). Bíceps recebe 3s diretas + indireto de todas as puxadas = ~9–10s semanais. Sem ombro posterior direto — 72h desde ter, recebe indireto das remadas.',
+  subtitle:'Segundo estímulo de costas. Bíceps: Bayesian alongado (3s) + Scott máquina encurtado (2s) = cobertura completa da curva de força. 72h desde ter ✓.',
   exercises:[
     L.remBaixa,          // Costas 3s
     X(L.pullover,3),     // Costas 3s — grande dorsal em alongamento
     L.puxUni,            // Costas 2s — unilateral
-    X(L.roscaBayes,3),   // Bíceps 3s diretas (Bayesian = posição alongada)
+    X(L.roscaBayes,3),   // Bíceps 3s — posição alongada (Bayesian)
+    X(L.roscaScott,2),   // Bíceps 2s — posição encurtada/pico (novo, 72h ✓)
   ]
 };
 
