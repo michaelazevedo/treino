@@ -77,3 +77,32 @@ body{overflow-x:hidden}body:before{content:"";position:fixed;inset:0;pointer-eve
 .supp-card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px}.supp-icon{font-size:1.5rem;margin-bottom:8px}.supp-card h4{font:800 1rem "Barlow Condensed";text-transform:uppercase;margin:0 0 6px;color:var(--text)}.supp-card p{font-size:.78rem;color:var(--muted);margin:0;line-height:1.5}
 @media(max-width:900px){.diet-hero{grid-template-columns:1fr;gap:24px}.diet-macros{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.meals-grid{grid-template-columns:1fr}.diet-macros{grid-template-columns:repeat(2,1fr)}.supps-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* ══ LISTA DE COMPRAS ══ */
+.shopping-section{border-top:1px solid var(--line);padding-top:48px;margin-top:48px}
+.shop-period-bar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:16px 20px;background:linear-gradient(145deg,#141920,#0e1116);border:1px solid var(--line);border-radius:14px;margin-bottom:28px}
+.shop-period-label{font:700 .7rem Inter;letter-spacing:.12em;color:var(--muted);text-transform:uppercase;margin-right:6px}
+.shop-radio-label{display:flex;align-items:center;gap:7px;cursor:pointer;padding:8px 16px;border:1px solid var(--line);border-radius:8px;font:600 .85rem Inter;color:var(--muted);transition:.2s;background:rgba(255,255,255,.02)}
+.shop-radio-label:hover{border-color:rgba(201,255,50,.4);color:var(--text)}
+.shop-radio-label input[type="radio"]{appearance:none;width:15px;height:15px;border:2px solid #4b5561;border-radius:50%;cursor:pointer;transition:.2s;flex-shrink:0}
+.shop-radio-label input[type="radio"]:checked{border-color:var(--acid);background:var(--acid);box-shadow:0 0 0 3px rgba(201,255,50,.2)}
+.shop-radio-label:has(input:checked){border-color:var(--acid);background:rgba(201,255,50,.08);color:var(--text)}
+.shop-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;margin-bottom:24px}
+.shop-cat{background:linear-gradient(145deg,#141920,#0e1116);border:1px solid var(--line);border-radius:18px;padding:22px;position:relative;overflow:hidden}
+.shop-cat::before{content:"";position:absolute;left:0;top:0;width:100px;height:2px;background:linear-gradient(90deg,var(--acid),transparent)}
+.shop-cat-supps{border-color:rgba(201,255,50,.2);background:linear-gradient(145deg,rgba(20,28,14,.9),rgba(14,18,10,.9))}
+.shop-cat-supps::before{width:160px}
+.shop-cat-header{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.shop-cat-icon{font-size:1.4rem}
+.shop-cat h3{font:800 1.3rem "Barlow Condensed";text-transform:uppercase;margin:0;color:var(--text);letter-spacing:.03em}
+.shop-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:0}
+.shop-list li{display:grid;grid-template-columns:1fr auto;grid-template-rows:auto auto;gap:2px 10px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.04)}
+.shop-list li:last-child{border-bottom:0;padding-bottom:0}
+.shop-list li:first-child{padding-top:0}
+.shop-item-name{font:600 .9rem Inter;color:var(--text);grid-column:1;grid-row:1;align-self:center}
+.shop-item-qty{font:800 1rem "Barlow Condensed";color:var(--acid);grid-column:2;grid-row:1;text-align:right;white-space:nowrap;align-self:center;letter-spacing:.02em}
+.shop-item-note{font-size:.7rem;color:var(--muted);grid-column:1/-1;grid-row:2}
+.shop-obs{font-size:.74rem;color:#68727d;margin:8px 0 0;padding:12px 16px;border:1px solid var(--line);border-radius:9px;background:rgba(255,255,255,.018)}
+.shop-obs b{color:var(--text)}
+@media(max-width:900px){.shop-period-bar{gap:6px}.shop-radio-label{padding:7px 12px;font-size:.8rem}}
+@media(max-width:600px){.shop-grid{grid-template-columns:1fr}.shop-period-bar{gap:6px}.shop-radio-label{flex:1;justify-content:center;text-align:center;padding:8px 10px;font-size:.78rem}}

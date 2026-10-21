@@ -517,6 +517,230 @@
         </div>
       </div>
 
+      <!-- ══ LISTA DE COMPRAS ══ -->
+      <div class="shopping-section" id="shoppingSection">
+        <div class="section-head" style="margin-bottom:20px">
+          <div>
+            <p class="eyebrow">LISTA DE COMPRAS · BASEADA NA DIETA</p>
+            <h2>Lista de Compras</h2>
+          </div>
+        </div>
+
+        <!-- PERÍODO -->
+        <div class="shop-period-bar">
+          <span class="shop-period-label">Calcular para:</span>
+          <label class="shop-radio-label">
+            <input type="radio" name="shopPeriod" value="7" onchange="calcShop()" checked>
+            <span>Semana (7 dias)</span>
+          </label>
+          <label class="shop-radio-label">
+            <input type="radio" name="shopPeriod" value="15" onchange="calcShop()">
+            <span>Quinzena (15 dias)</span>
+          </label>
+          <label class="shop-radio-label">
+            <input type="radio" name="shopPeriod" value="30" onchange="calcShop()">
+            <span>Mensal (30 dias)</span>
+          </label>
+        </div>
+
+        <!-- CATEGORIAS -->
+        <div class="shop-grid" id="shopGrid">
+
+          <!-- PROTEÍNAS -->
+          <div class="shop-cat">
+            <div class="shop-cat-header">
+              <span class="shop-cat-icon">🥩</span>
+              <h3>Proteínas</h3>
+            </div>
+            <ul class="shop-list">
+              <li>
+                <span class="shop-item-name">Ovos inteiros</span>
+                <span class="shop-item-qty" data-day="6" data-unit="unid"></span>
+                <span class="shop-item-note">4 no café + 2 no jantar</span>
+              </li>
+              <li>
+                <span class="shop-item-name">Frango grelhado (peito)</span>
+                <span class="shop-item-qty" data-day="400" data-unit="g"></span>
+                <span class="shop-item-note">150g lanche manhã + 250g jantar</span>
+              </li>
+              <li>
+                <span class="shop-item-name">Carne bovina (patinho/alcatra)</span>
+                <span class="shop-item-qty" data-day="250" data-unit="g"></span>
+                <span class="shop-item-note">250g no almoço</span>
+              </li>
+              <li>
+                <span class="shop-item-name">Whey Protein</span>
+                <span class="shop-item-qty" data-day="60" data-unit="g"></span>
+                <span class="shop-item-note">2 scoops pós-treino</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- CARBOIDRATOS -->
+          <div class="shop-cat">
+            <div class="shop-cat-header">
+              <span class="shop-cat-icon">🍚</span>
+              <h3>Carboidratos</h3>
+            </div>
+            <ul class="shop-list">
+              <li>
+                <span class="shop-item-name">Aveia em flocos</span>
+                <span class="shop-item-qty" data-day="80" data-unit="g"></span>
+                <span class="shop-item-note">80g no café das 09h</span>
+              </li>
+              <li>
+                <span class="shop-item-name">Batata doce</span>
+                <span class="shop-item-qty" data-day="150" data-unit="g"></span>
+                <span class="shop-item-note">150g no lanche da manhã</span>
+              </li>
+              <li>
+                <span class="shop-item-name">Arroz branco</span>
+                <span class="shop-item-qty" data-day="350" data-unit="g"></span>
+                <span class="shop-item-note">200g almoço + 150g jantar (cozido)</span>
+              </li>
+              <li>
+                <span class="shop-item-name">Feijão / lentilha</span>
+                <span class="shop-item-qty" data-day="80" data-unit="g"></span>
+                <span class="shop-item-note">1 concha no almoço</span>
+              </li>
+              <li>
+                <span class="shop-item-name">Banana</span>
+                <span class="shop-item-qty" data-day="4" data-unit="unid"></span>
+                <span class="shop-item-note">2 pré-treino + 2 pós-treino</span>
+              </li>
+              <li>
+                <span class="shop-item-name">Pão integral</span>
+                <span class="shop-item-qty" data-day="2" data-unit="fatias"></span>
+                <span class="shop-item-note">2 fatias pré-treino</span>
+              </li>
+              <li>
+                <span class="shop-item-name">Granola</span>
+                <span class="shop-item-qty" data-day="30" data-unit="g"></span>
+                <span class="shop-item-note">30g no lanche da tarde</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- LATICÍNIOS -->
+          <div class="shop-cat">
+            <div class="shop-cat-header">
+              <span class="shop-cat-icon">🥛</span>
+              <h3>Laticínios</h3>
+            </div>
+            <ul class="shop-list">
+              <li>
+                <span class="shop-item-name">Iogurte grego natural</span>
+                <span class="shop-item-qty" data-day="550" data-unit="g"></span>
+                <span class="shop-item-note">150g lanche manhã + 200g tarde + 200g ceia</span>
+              </li>
+              <li>
+                <span class="shop-item-name">Cottage (alternativa ceia)</span>
+                <span class="shop-item-qty" data-day="200" data-unit="g"></span>
+                <span class="shop-item-note">200g na ceia (se não usar iogurte)</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- GORDURAS BOAS -->
+          <div class="shop-cat">
+            <div class="shop-cat-header">
+              <span class="shop-cat-icon">🥑</span>
+              <h3>Gorduras</h3>
+            </div>
+            <ul class="shop-list">
+              <li>
+                <span class="shop-item-name">Azeite de oliva extra virgem</span>
+                <span class="shop-item-qty" data-day="15" data-unit="ml"></span>
+                <span class="shop-item-note">10ml almoço + fio no jantar</span>
+              </li>
+              <li>
+                <span class="shop-item-name">Castanha do Pará</span>
+                <span class="shop-item-qty" data-day="40" data-unit="g"></span>
+                <span class="shop-item-note">20g tarde + 20g ceia (~8 unidades/dia)</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- FRUTAS E VEGETAIS -->
+          <div class="shop-cat">
+            <div class="shop-cat-header">
+              <span class="shop-cat-icon">🥦</span>
+              <h3>Frutas e Vegetais</h3>
+            </div>
+            <ul class="shop-list">
+              <li>
+                <span class="shop-item-name">Fruta da estação (mamão/maçã/abacaxi)</span>
+                <span class="shop-item-qty" data-day="1" data-unit="porção"></span>
+                <span class="shop-item-note">1 porção no café das 09h</span>
+              </li>
+              <li>
+                <span class="shop-item-name">Legumes variados (abobrinha/cenoura/brócolis)</span>
+                <span class="shop-item-qty" data-day="150" data-unit="g"></span>
+                <span class="shop-item-note">150g no jantar refogados</span>
+              </li>
+              <li>
+                <span class="shop-item-name">Salada verde (alface/rúcula)</span>
+                <span class="shop-item-qty" data-day="1" data-unit="porção livre"></span>
+                <span class="shop-item-note">À vontade no almoço</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- SUPLEMENTOS -->
+          <div class="shop-cat shop-cat-supps">
+            <div class="shop-cat-header">
+              <span class="shop-cat-icon">💊</span>
+              <h3>Suplementos</h3>
+            </div>
+            <ul class="shop-list">
+              <li>
+                <span class="shop-item-name">Creatina monohidratada</span>
+                <span class="shop-item-qty" data-day="5" data-unit="g"></span>
+                <span class="shop-item-note">5g/dia — horário flexível</span>
+              </li>
+              <li>
+                <span class="shop-item-name">Citrulina Malato</span>
+                <span class="shop-item-qty" data-day="7" data-unit="g"></span>
+                <span class="shop-item-note">6–8g pré-treino (dias de treino)</span>
+              </li>
+              <li>
+                <span class="shop-item-name">Beta-Alanina</span>
+                <span class="shop-item-qty" data-day="3.2" data-unit="g"></span>
+                <span class="shop-item-note">3,2g no almoço</span>
+              </li>
+              <li>
+                <span class="shop-item-name">Cafeína 200mg</span>
+                <span class="shop-item-qty" data-day="1" data-unit="cáp"></span>
+                <span class="shop-item-note">200mg pré-treino (dias de treino)</span>
+              </li>
+              <li>
+                <span class="shop-item-name">NAC (N-Acetil-Cisteína 500mg)</span>
+                <span class="shop-item-qty" data-day="1" data-unit="cáp"></span>
+                <span class="shop-item-note">500mg pós-treino</span>
+              </li>
+              <li>
+                <span class="shop-item-name">Vitamina D3 + K2</span>
+                <span class="shop-item-qty" data-day="1" data-unit="cáp"></span>
+                <span class="shop-item-note">1 cápsula no café com gordura</span>
+              </li>
+              <li>
+                <span class="shop-item-name">Ômega 3</span>
+                <span class="shop-item-qty" data-day="2" data-unit="cáps"></span>
+                <span class="shop-item-note">2 cápsulas no café das 09h</span>
+              </li>
+              <li>
+                <span class="shop-item-name">ZMA</span>
+                <span class="shop-item-qty" data-day="1" data-unit="dose"></span>
+                <span class="shop-item-note">1 dose às 21h, longe do cálcio</span>
+              </li>
+            </ul>
+          </div>
+
+        </div><!-- /shop-grid -->
+
+        <p class="shop-obs">* Quantidades em gramas referem-se ao peso <b>cru</b> (exceto arroz e legumes que são pesados cozidos conforme indicado). Ajuste castanha do Pará: máx. 4 unid/dia por selênio.</p>
+      </div><!-- /shopping-section -->
+
     </section><!-- /diet-section -->
   </main>
 

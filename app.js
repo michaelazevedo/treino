@@ -444,3 +444,24 @@ function toggleDietSubs(id) {
     btn.textContent = el.classList.contains('open') ? 'fechar' : 'trocar';
   }
 }
+
+// ── LISTA DE COMPRAS
+function calcShop() {
+  const radio = document.querySelector('input[name="shopPeriod"]:checked');
+  const days = radio ? parseInt(radio.value, 10) : 7;
+
+  document.querySelectorAll('.shop-item-qty[data-day]').forEach(el => {
+    const perDay = parseFloat(el.dataset.day);
+    const unit = el.dataset.unit || '';
+    const total = Math.round(perDay * days * 10) / 10;
+
+    // Formata o número: sem casas decimais quando inteiro
+    const fmt = Number.isInteger(total) ? total.toString() : total.toFixed(1).replace('.', ',');
+
+    // Para unidades e porções, arredonda para cima para garantir
+    el.textContent = `${fmt} ${unit}`;
+  });
+}
+
+// Roda no carregamento para calcular com a seleção inicial (7 dias)
+document.addEventListener('DOMContentLoaded', () => { calcShop(); });
