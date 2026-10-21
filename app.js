@@ -61,7 +61,8 @@ const L={
   pantPe:E('Panturrilha em pé na máquina','Panturrilhas',4,'8–12','60–90 s','0–1','Pausa de 2 s no alongamento máximo e subida sem quicar. Após a falha, faça parciais na metade inferior (alongada).'),
   pantLP:E('Panturrilha no leg press','Panturrilhas',3,'10–15','60–90 s','0–1','Joelhos estendidos, só o tornozelo trabalha. Desça ao máximo; parciais alongadas na última série.'),
   pantSent:E('Panturrilha sentada','Panturrilhas',2,'12–20','60–90 s','0–1','Amplitude total com pausa embaixo. Complemento para o sóleo — a panturrilha em pé deu mais hipertrofia total, por isso vem primeiro na semana.'),
-  abdCabo:E('Abdominal no cabo','Abdômen',3,'10–15','60–90 s','1','Ajoelhado, enrole a coluna levando as costelas em direção à pelve; o quadril não se move. Alongue em cima.')
+  abdCabo:E('Abdominal no cabo','Abdômen',3,'10–15','60–90 s','1','Ajoelhado, enrole a coluna levando as costelas em direção à pelve; o quadril não se move. Alongue em cima.'),
+  abdWheel:E('Ab wheel (roda abdominal)','Abdômen',3,'6–10','90 s','1','Joelhos no chão, mãos na roda. Role à frente até o máximo alongamento do reto abdominal (coluna quase reta), segure 1 s e volte contraindo o core sem arquear a lombar. É o exercício com maior ativação do reto abdominal nos estudos de EMG e o único que carrega o músculo na posição ALONGADA — onde a hipertrofia é maior segundo Kassiano et al. 2023. Progrida: quando conseguir 3×10 no chão, eleve os joelhos ou use roda em pé.')
 };
 
 const alternatives={
@@ -174,12 +175,14 @@ const planFB={
 
 // ── PPL 6 DIAS (enhanced · evidência-based)
 // Princípios: 2× por músculo, ≥48h entre estímulos, volume direto controlado
-// Volume semanal direto atualizado (v3):
+// Volume semanal direto atualizado (v4):
 //   Ombro lateral: Seg (cabo 3s + inclinado 2s) + Qui (máquina 3s + cabo 3s) = 11s diretas
 //   Tríceps:       Seg (francês 3s + supinado 2s) + Qui (corda 3s + barraV 2s) = 10s diretas
 //   Bíceps:        Ter (inclinada 3s + Scott 2s) + Sex (Bayesian 3s + Scott 2s) = 10s diretas
 //   Peito:         Seg (3+3+3) + Qui (3+3) = 15s diretas
 //   Costas:        Ter (3+3) + Sex (3+3+2) = 14s diretas
+//   Abdômen:       Qua (wheel 3s + cabo 3s) + Sáb (wheel 2s + cabo 2s) = 10s diretas
+//                  Cobertura ALONGAMENTO (wheel) + ENCURTAMENTO (cabo) — evidência Kassiano 2023
 //
 // Mapa de intervalos (todos ≥72h):
 //   Peito:     Seg → Qui ✓   Costas:  Ter → Sex ✓   Pernas: Qua → Sáb ✓
@@ -217,14 +220,15 @@ const ppl6_pullA={
 const ppl6_legsA={
   short:'QUA',day:'QUARTA-FEIRA',
   title:'Legs A — quadríceps + adutores + panturrilha',
-  subtitle:'Quad como prioridade: Hack fundo + Leg press + Extensora reclinada. Adutores e panturrilha completam. Sem posteriores — recuperam para sábado.',
+  subtitle:'Quad como prioridade: Hack fundo + Leg press + Extensora reclinada. Adutores e panturrilha completam. Abdômen: roda abdominal (alongamento) + cabo (encurtamento) = cobertura completa do reto abdominal. Sem posteriores — recuperam para sábado.',
   exercises:[
     L.hack,              // Quad 3s
     L.legPress,          // Quad 3s
     X(L.extensora,3),    // Quad 3s — posição alongada
     X(L.adutora,2),      // Adutores 2s
     X(L.pantPe,3),       // Panturrilha 3s
-    L.abdCabo,           // Abdômen 3s
+    X(L.abdWheel,3),     // Abdômen 3s — ALONGAMENTO (reto abdominal carregado alongado)
+    L.abdCabo,           // Abdômen 3s — ENCURTAMENTO (reto abdominal encurtado)
   ]
 };
 
@@ -268,7 +272,8 @@ const ppl6_legsB={
     X(L.adutora,2),      // Adutores 2s
     L.pantLP,            // Panturrilha 3s
     L.pantSent,          // Panturrilha sóleo 2s
-    X(L.abdCabo,2),      // Abdômen 2s
+    X(L.abdWheel,2),     // Abdômen 2s — ALONGAMENTO (segundo estímulo semanal)
+    X(L.abdCabo,2),      // Abdômen 2s — ENCURTAMENTO
   ]
 };
 
