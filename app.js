@@ -137,47 +137,6 @@ const planA={
   sexta:legsB,sabado:upperDay,domingo:off('DOMINGO','DOM')
 };
 
-// ── UPPER/LOWER · 4 dias (pernas 2×)
-const planUL={
-  segunda:{short:'SEG',day:'SEGUNDA-FEIRA',title:'Upper A — peito dominante',subtitle:'Empurrar e puxar no mesmo dia, com prioridade para o peito.',exercises:[
-    L.supIncSmith,L.puxNeutra,L.chestPress,L.remArt,X(L.latCabo,4),L.tricFrances,L.roscaInc]},
-  terca:{...legsA,short:'TER',day:'TERÇA-FEIRA',title:'Lower A — quadríceps'},
-  quarta:off('QUARTA-FEIRA','QUA','Descanso estratégico'),
-  quinta:{short:'QUI',day:'QUINTA-FEIRA',title:'Upper B — costas dominante',subtitle:'Segundo estímulo de superiores, com prioridade para as costas e braços.',exercises:[
-    L.remBaixa,L.supIncConv,X(L.pullover,2),L.peckDeck,X(L.latMaq,4),X(L.cruzInv,2),L.roscaBayes,L.tricCorda]},
-  sexta:{...legsB,short:'SEX',day:'SEXTA-FEIRA',title:'Lower B — posteriores'},
-  sabado:off('SÁBADO','SÁB'),domingo:off('DOMINGO','DOM')
-};
-
-// ── PPL + UPPER · 4 dias (pernas 1×)
-const planPPLU={
-  segunda:pushDay,
-  terca:{...pullDay,short:'TER',day:'TERÇA-FEIRA'},
-  quarta:off('QUARTA-FEIRA','QUA','Descanso estratégico'),
-  quinta:{short:'QUI',day:'QUINTA-FEIRA',title:'Pernas completas',subtitle:'Único treino de pernas da semana: concentrado, mas sem passar de ~9 séries por músculo na sessão.',exercises:[
-    L.hack,L.legPress,L.extensora,X(L.flexSent,4),L.mesaFlex,X(L.adutora,2),L.pantPe,L.pantSent]},
-  sexta:{...upperDay,short:'SEX',day:'SEXTA-FEIRA'},
-  sabado:off('SÁBADO','SÁB'),domingo:off('DOMINGO','DOM')
-};
-
-// ── FOCO 4 DIAS · Peito / Costas / Pernas / (OFF) / Upper braços + ombro
-const planFoco={
-  segunda:{short:'SEG',day:'SEGUNDA-FEIRA',title:'Peito — foco total',subtitle:'4 exercícios de peito (supinos inclinado e reto + crucifixo alongado), 1 de ombro lateral e 1 de tríceps cabeça longa. Peito na frente do treino, com o tríceps ainda descansado.',exercises:[
-    L.supIncSmith,L.chestPress,X(L.supIncConv,2),L.cruzCabo,L.latCabo,L.tricFrances]},
-  terca:{short:'TER',day:'TERÇA-FEIRA',title:'Costas — foco total',subtitle:'4 exercícios de costas (vertical + horizontal + alongamento), 1 de ombro posterior e 1 de tríceps. O tríceps de hoje é o pushdown supinado (cabeça lateral): a cabeça longa já foi trabalhada ontem.',exercises:[
-    L.puxNeutra,L.remArt,L.remBaixa,L.puxUni,L.cruzInv,X(L.tricSupinado,2)]},
-  quarta:{short:'QUA',day:'QUARTA-FEIRA',title:'Pernas completas',subtitle:'Único treino de pernas da semana: quadríceps, posteriores, adutores e panturrilhas. Concentrado, mas sem passar de ~9 séries por músculo na sessão.',exercises:[
-    L.hack,L.legPress,L.extensora,X(L.flexSent,4),L.mesaFlex,X(L.adutora,2),L.pantPe,L.pantSent]},
-  quinta:off('QUINTA-FEIRA','QUI'),
-  sexta:{short:'SEX',day:'SEXTA-FEIRA',title:'Upper — foco em braços e ombro',subtitle:'Prioridade: ombro lateral, bíceps (alongado + encurtado) e tríceps. Peito e costas entram com 2 exercícios cada, só para manter a frequência 2× na semana.',exercises:[
-    L.latMaq,X(L.latInclinado,2),
-    L.roscaInc,L.roscaBayes,X(L.roscaScott,2),
-    L.tricCorda,X(L.tricV,2),
-    X(L.peckDeck,2),X(L.chestPress,2),
-    X(L.pullover,2),X(L.remBaixa,2)]},
-  sabado:off('SÁBADO','SÁB'),domingo:off('DOMINGO','DOM')
-};
-
 // ── PPL 6 DIAS (enhanced · evidência-based)
 // Princípios: 2× por músculo, ≥48h entre estímulos, volume direto controlado
 // Volume semanal direto atualizado (v4):
@@ -290,10 +249,7 @@ const planPPL6={
 
 const schedules={
   ppl6x:{plan:planPPL6,description:'PPL 6 dias: Push A · Pull A · Legs A · Push B · Pull B · Legs B. Cada músculo 2× · 20–30 séries/semana · indicado para usuários de hormônios.'},
-  padrao:{plan:planA,description:'Push · Pernas A · Pull · descanso · Pernas B · Upper · descanso. Cada músculo 2× na semana, maior volume total.'},
-  pernas2x:{plan:planUL,description:'Upper A · Lower A · descanso · Upper B · Lower B. Tudo 2× na semana com 4 sessões.'},
-  pernas1x:{plan:planPPLU,description:'Push · Pull · descanso · Pernas · Upper. Superiores 2×, pernas 1× — escolha se prioriza o tronco.'},
-  foco4:{plan:planFoco,description:'Peito (seg) · Costas (ter) · Pernas (qua) · descanso · Upper com foco em ombro e braços (sex). Peito e costas com dia próprio; braços e ombro ganham o dia de sexta.'}
+  padrao:{plan:planA,description:'Push · Pernas A · Pull · descanso · Pernas B · Upper · descanso. Cada músculo 2× na semana, maior volume total.'}
 };
 
 const MUSCLES=['Peito','Costas','Ombro lateral','Ombro posterior','Tríceps','Bíceps','Trapézio','Quadríceps','Posteriores','Adutores','Panturrilhas','Abdômen'];
