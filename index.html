@@ -152,37 +152,37 @@
       <!-- REFEIÇÕES -->
       <div class="meals-grid">
 
-        <!-- 04:00 PRÉ-TREINO -->
+        <!-- 04:30 PRÉ-TREINO -->
         <article class="meal-card pre-workout">
-          <div class="meal-time">04:00</div>
+          <div class="meal-time">04:30</div>
           <div class="meal-tag">PRÉ-TREINO</div>
-          <h3 class="meal-title">Pré-Treino</h3>
+          <h3 class="meal-title">Pré-Treino (30 min antes)</h3>
+          <p class="meal-note">Só algo leve e de digestão rápida: o jantar das 22:00 é a refeição que sustenta o treino. Beba 400–500 ml de água com uma pitada de sal.</p>
           <ul class="meal-items">
             <li>
-              <span class="food-name">Banana</span>
-              <span class="food-qty">2 unid (~180 g)</span>
-              <button class="sub-toggle" onclick="toggleDietSubs('sub-banana-pre')" type="button">trocar</button>
-              <ul class="subs-list" id="sub-banana-pre">
-                <li>Tâmara 4 unid</li>
-                <li>Manga 150 g</li>
-                <li>Aveia em flocos 60 g com água</li>
+              <span class="food-name">Whey protein</span>
+              <span class="food-qty">1 scoop (~30 g)</span>
+              <button class="sub-toggle" onclick="toggleDietSubs('sub-whey-pre')" type="button">trocar</button>
+              <ul class="subs-list" id="sub-whey-pre">
+                <li>Iogurte grego 150 g</li>
+                <li>Claras 3 unid cozidas</li>
               </ul>
             </li>
             <li>
-              <span class="food-name">Pão integral</span>
-              <span class="food-qty">2 fatias (~60 g)</span>
-              <button class="sub-toggle" onclick="toggleDietSubs('sub-pao-pre')" type="button">trocar</button>
-              <ul class="subs-list" id="sub-pao-pre">
-                <li>Tapioca 1 unid (40 g)</li>
-                <li>Batata doce 100 g cozida</li>
-                <li>Whey protein 1 scoop + banana (se difícil comer sólido)</li>
+              <span class="food-name">Banana</span>
+              <span class="food-qty">1 unid (~90 g)</span>
+              <button class="sub-toggle" onclick="toggleDietSubs('sub-banana-pre')" type="button">trocar</button>
+              <ul class="subs-list" id="sub-banana-pre">
+                <li>Dextrose ou maltodextrina 30–40 g em água</li>
+                <li>Pão integral 1 fatia + mel</li>
+                <li>Tâmara 3 unid</li>
               </ul>
             </li>
           </ul>
           <div class="supp-block">
             <span class="supp-label">SUPLEMENTOS</span>
-            <div class="supp-item"><b>Citrulina malato</b> <span>6–8 g · 30–45 min antes do treino · vasodilatação e resistência</span></div>
-            <div class="supp-item"><b>Cafeína</b> <span>200 mg · em jejum ou com a banana</span></div>
+            <div class="supp-item"><b>Citrulina malato</b> <span>6–8 g · junto com o pré (30 min antes) · vasodilatação e resistência</span></div>
+            <div class="supp-item"><b>Cafeína</b> <span>200 mg · às 04:30, pico na hora do treino</span></div>
           </div>
         </article>
 
@@ -405,86 +405,57 @@
           </ul>
         </article>
 
-        <!-- 19:30 JANTAR -->
+        <!-- 21:30 ZMA — isolado, sem cálcio -->
         <article class="meal-card">
-          <div class="meal-time">19:30</div>
-          <div class="meal-tag">JANTAR</div>
-          <h3 class="meal-title">Jantar</h3>
-          <ul class="meal-items">
-            <li>
-              <span class="food-name">Frango / carne / peixe</span>
-              <span class="food-qty">250 g</span>
-              <button class="sub-toggle" onclick="toggleDietSubs('sub-prot-jantar')" type="button">trocar</button>
-              <ul class="subs-list" id="sub-prot-jantar">
-                <li>Salmão 180 g (extra ômega 3)</li>
-                <li>Atum fresco grelhado 200 g</li>
-                <li>Carne moída + ovo 2 unid</li>
-              </ul>
-            </li>
-            <li>
-              <span class="food-name">Arroz branco cozido</span>
-              <span class="food-qty">150 g</span>
-              <button class="sub-toggle" onclick="toggleDietSubs('sub-arroz-jantar')" type="button">trocar</button>
-              <ul class="subs-list" id="sub-arroz-jantar">
-                <li>Batata doce 150 g</li>
-                <li>Mandioca cozida 150 g</li>
-                <li>Macarrão integral 140 g cozido</li>
-              </ul>
-            </li>
-            <li>
-              <span class="food-name">Legumes refogados</span>
-              <span class="food-qty">150 g + fio de azeite</span>
-              <button class="sub-toggle" onclick="toggleDietSubs('sub-legumes-jantar')" type="button">trocar</button>
-              <ul class="subs-list" id="sub-legumes-jantar">
-                <li>Brócolis + cenoura 150 g</li>
-                <li>Abobrinha + pimentão 150 g</li>
-                <li>Salada crua à vontade</li>
-              </ul>
-            </li>
-            <li>
-              <span class="food-name">Ovos inteiros</span>
-              <span class="food-qty">2 unid</span>
-            </li>
-          </ul>
-        </article>
-
-        <!-- 21:00 ZMA — isolado, sem cálcio -->
-        <article class="meal-card">
-          <div class="meal-time">21:00</div>
-          <div class="meal-tag">PRÉ-CEIA</div>
+          <div class="meal-time">21:30</div>
+          <div class="meal-tag">PRÉ-JANTAR</div>
           <h3 class="meal-title">ZMA — isolado do cálcio</h3>
-          <p class="meal-note">⚠️ Tome o ZMA 30 min ANTES da ceia e longe de qualquer laticínio — o cálcio bloqueia a absorção do zinco e magnésio.</p>
+          <p class="meal-note">⚠️ Tome o ZMA 30 min ANTES do jantar e longe de qualquer laticínio — o cálcio bloqueia a absorção do zinco e magnésio.</p>
           <div class="supp-block zma-block">
             <span class="supp-label">SUPLEMENTO</span>
             <div class="supp-item"><b>ZMA</b> <span>1 dose · estômago vazio · sem cálcio nas próximas 30 min</span></div>
           </div>
         </article>
 
-        <!-- 21:30 CEIA -->
+        <!-- 22:00 JANTAR (pré-treino de verdade) -->
         <article class="meal-card last-meal">
-          <div class="meal-time">21:30</div>
-          <div class="meal-tag">CEIA</div>
-          <h3 class="meal-title">Ceia — antes de dormir</h3>
+          <div class="meal-time">22:00</div>
+          <div class="meal-tag">JANTAR · SUSTENTA O TREINO</div>
+          <h3 class="meal-title">Jantar (~830 kcal)</h3>
+          <p class="meal-note">Última refeição antes do treino das 05:00 (~7 h). Meta: ~100 g de carboidrato, ~60 g de proteína e ~20 g de gordura. Gordura moderada para não atrapalhar o sono.</p>
           <ul class="meal-items">
             <li>
-              <span class="food-name">Cottage / iogurte grego</span>
-              <span class="food-qty">200 g</span>
-              <button class="sub-toggle" onclick="toggleDietSubs('sub-ceia-prot')" type="button">trocar</button>
-              <ul class="subs-list" id="sub-ceia-prot">
-                <li>Caseína 1 scoop (em água — sem leite)</li>
-                <li>Claras de ovo 4 unid cozidas</li>
-                <li>Queijo minas frescal 100 g</li>
+              <span class="food-name">Frango / carne / peixe</span>
+              <span class="food-qty">180 g</span>
+              <button class="sub-toggle" onclick="toggleDietSubs('sub-prot-jantar')" type="button">trocar</button>
+              <ul class="subs-list" id="sub-prot-jantar">
+                <li>Salmão 150 g (extra ômega 3)</li>
+                <li>Atum fresco grelhado 180 g</li>
+                <li>Carne moída 180 g</li>
               </ul>
             </li>
             <li>
-              <span class="food-name">Castanha do Pará / nozes</span>
-              <span class="food-qty">20 g</span>
-              <button class="sub-toggle" onclick="toggleDietSubs('sub-ceia-fat')" type="button">trocar</button>
-              <ul class="subs-list" id="sub-ceia-fat">
-                <li>Pasta de amendoim 15 g</li>
-                <li>Amêndoas 20 g</li>
-                <li>Abacate 60 g</li>
+              <span class="food-name">Arroz branco cozido</span>
+              <span class="food-qty">250 g</span>
+              <button class="sub-toggle" onclick="toggleDietSubs('sub-arroz-jantar')" type="button">trocar</button>
+              <ul class="subs-list" id="sub-arroz-jantar">
+                <li>Macarrão cozido 250 g</li>
+                <li>Mandioca cozida 250 g</li>
+                <li>Batata inglesa cozida 350 g</li>
               </ul>
+            </li>
+            <li>
+              <span class="food-name">Batata doce cozida</span>
+              <span class="food-qty">150 g</span>
+              <button class="sub-toggle" onclick="toggleDietSubs('sub-batata-jantar')" type="button">trocar</button>
+              <ul class="subs-list" id="sub-batata-jantar">
+                <li>Inhame cozido 150 g</li>
+                <li>Mandioca cozida 150 g</li>
+              </ul>
+            </li>
+            <li>
+              <span class="food-name">Azeite de oliva</span>
+              <span class="food-qty">1 colher sopa (10 ml)</span>
             </li>
           </ul>
         </article>
@@ -500,15 +471,15 @@
           </div>
         </div>
         <div class="supps-grid">
-          <div class="supp-card"><div class="supp-icon">💊</div><h4>Citrulina Malato</h4><p>6–8 g às 03:15–03:30 (30–45 min pré-treino). Melhora bombeamento, reduz fadiga e aumenta o volume total de repetições.</p></div>
-          <div class="supp-card"><div class="supp-icon">⚡</div><h4>Cafeína</h4><p>200 mg às 04:00. Foco, força e resistência. Não use diariamente se tiver insônia ou taquicardia. Cicle 5–6 semanas on / 1 off.</p></div>
+          <div class="supp-card"><div class="supp-icon">💊</div><h4>Citrulina Malato</h4><p>6–8 g às 04:30, junto com o pré (30 min antes do treino). Melhora bombeamento, reduz fadiga e aumenta o volume total de repetições.</p></div>
+          <div class="supp-card"><div class="supp-icon">⚡</div><h4>Cafeína</h4><p>200 mg às 04:30. Foco, força e resistência. Não use diariamente se tiver insônia ou taquicardia. Cicle 5–6 semanas on / 1 off.</p></div>
           <div class="supp-card"><div class="supp-icon">🔥</div><h4>Beta-Alanina</h4><p>3,2 g no almoço (13:00) junto com a refeição — elimina a pinicação com eficácia idêntica. Acumula tecido muscular em 4–6 semanas.</p></div>
           <div class="supp-card"><div class="supp-icon">🥤</div><h4>Whey Protein</h4><p>Pré opcional (1 scoop) + pós-treino (2 scoops). Whey isolado se tiver intolerância à lactose. Use para bater a meta proteica, não como substituto de comida.</p></div>
           <div class="supp-card"><div class="supp-icon">💪</div><h4>Creatina</h4><p>5 g/dia. Horário flexível — consistência é o que importa. Preferencialmente pós-treino ou com a primeira refeição sólida. Não precisa fase de saturação.</p></div>
           <div class="supp-card"><div class="supp-icon">🐟</div><h4>Ômega 3</h4><p>2 cápsulas no café das 09:00. Reduz inflamação, melhora recuperação muscular e saúde cardiovascular. Tome sempre com refeição gordurosa.</p></div>
           <div class="supp-card"><div class="supp-icon">🛡️</div><h4>NAC (N-Acetil-Cisteína)</h4><p>500 mg pós-treino (07:00). Precursor da glutationa — antioxidante potente para recuperação. Pode causar náusea em jejum; tome com o shake.</p></div>
           <div class="supp-card"><div class="supp-icon">☀️</div><h4>Vitamina D3 + K2</h4><p>1 cápsula no café das 09:00. K2 redireciona o cálcio para os ossos. Tome com refeição gordurosa para absorção máxima. D3 é lipossolúvel.</p></div>
-          <div class="supp-card"><div class="supp-icon">🌙</div><h4>ZMA</h4><p>1 dose às 21:00, com estômago vazio, 30 min ANTES da ceia. NÃO tome com cálcio (laticínios) — bloqueia absorção do zinco e magnésio. Por isso o timing foi separado da ceia.</p></div>
+          <div class="supp-card"><div class="supp-icon">🌙</div><h4>ZMA</h4><p>1 dose às 21:30, com estômago vazio, 30 min ANTES do jantar. NÃO tome com cálcio (laticínios) — bloqueia absorção do zinco e magnésio. Por isso o timing foi separado das refeições com laticínio.</p></div>
           <div class="supp-card alert-card"><div class="supp-icon">⚠️</div><h4>Roacutan + Vitamina A</h4><p>Isotretinoína É vitamina A. Evite qualquer suplemento com retinol (vitamina A preformada), fígado bovino em excesso e óleo de fígado de bacalhau. Multivitamínicos com vitamina A são contraindicados durante o tratamento.</p></div>
           <div class="supp-card water-card"><div class="supp-icon">💧</div><h4>Hidratação — meta diária</h4><p>Mínimo 4 litros/dia. NPP causa retenção hídrica moderada e o Roacutan resseca mucosas e pele — a hidratação adequada atenua ambos os efeitos. Distribua ao longo do dia; não force tudo de uma vez.</p></div>
         </div>
@@ -552,28 +523,28 @@
             <ul class="shop-list">
               <li>
                 <span class="shop-item-name">Ovos inteiros</span>
-                <span class="shop-item-qty" data-day="6" data-unit="unid"></span>
-                <span class="shop-item-note">4 no café + 2 no jantar</span>
+                <span class="shop-item-qty" data-day="4" data-unit="unid"></span>
+                <span class="shop-item-note">4 no café</span>
               </li>
               <li>
                 <span class="shop-item-name">Frango grelhado (peito)</span>
-                <span class="shop-item-qty" data-day="317" data-unit="g"></span>
-                <span class="shop-item-note">150g fixo (lanche manhã) + 167g do rodízio almoço/jantar (⅓ das refeições principais)</span>
+                <span class="shop-item-qty" data-day="293" data-unit="g"></span>
+                <span class="shop-item-note">150g fixo (lanche manhã) + 143g do rodízio almoço/jantar (⅓ das refeições principais)</span>
               </li>
               <li>
                 <span class="shop-item-name">Carne bovina (patinho/alcatra)</span>
-                <span class="shop-item-qty" data-day="167" data-unit="g"></span>
+                <span class="shop-item-qty" data-day="143" data-unit="g"></span>
                 <span class="shop-item-note">⅓ das refeições principais (almoço ou jantar)</span>
               </li>
               <li>
                 <span class="shop-item-name">Peixe (tilápia / salmão / atum)</span>
-                <span class="shop-item-qty" data-day="167" data-unit="g"></span>
+                <span class="shop-item-qty" data-day="143" data-unit="g"></span>
                 <span class="shop-item-note">⅓ das refeições principais (almoço ou jantar)</span>
               </li>
               <li>
                 <span class="shop-item-name">Whey Protein</span>
-                <span class="shop-item-qty" data-day="60" data-unit="g"></span>
-                <span class="shop-item-note">2 scoops pós-treino</span>
+                <span class="shop-item-qty" data-day="90" data-unit="g"></span>
+                <span class="shop-item-note">1 scoop pré (04:30) + 2 scoops pós-treino</span>
               </li>
             </ul>
           </div>
@@ -592,13 +563,13 @@
               </li>
               <li>
                 <span class="shop-item-name">Batata doce</span>
-                <span class="shop-item-qty" data-day="150" data-unit="g"></span>
-                <span class="shop-item-note">150g no lanche da manhã</span>
+                <span class="shop-item-qty" data-day="300" data-unit="g"></span>
+                <span class="shop-item-note">150g lanche da manhã + 150g jantar</span>
               </li>
               <li>
                 <span class="shop-item-name">Arroz branco</span>
-                <span class="shop-item-qty" data-day="350" data-unit="g"></span>
-                <span class="shop-item-note">200g almoço + 150g jantar (cozido)</span>
+                <span class="shop-item-qty" data-day="450" data-unit="g"></span>
+                <span class="shop-item-note">200g almoço + 250g jantar (cozido)</span>
               </li>
               <li>
                 <span class="shop-item-name">Feijão / lentilha</span>
@@ -607,13 +578,8 @@
               </li>
               <li>
                 <span class="shop-item-name">Banana</span>
-                <span class="shop-item-qty" data-day="4" data-unit="unid"></span>
-                <span class="shop-item-note">2 pré-treino + 2 pós-treino</span>
-              </li>
-              <li>
-                <span class="shop-item-name">Pão integral</span>
-                <span class="shop-item-qty" data-day="2" data-unit="fatias"></span>
-                <span class="shop-item-note">2 fatias pré-treino</span>
+                <span class="shop-item-qty" data-day="3" data-unit="unid"></span>
+                <span class="shop-item-note">1 pré-treino + 2 pós-treino</span>
               </li>
               <li>
                 <span class="shop-item-name">Granola</span>
@@ -632,13 +598,8 @@
             <ul class="shop-list">
               <li>
                 <span class="shop-item-name">Iogurte grego natural</span>
-                <span class="shop-item-qty" data-day="550" data-unit="g"></span>
-                <span class="shop-item-note">150g lanche manhã + 200g tarde + 200g ceia</span>
-              </li>
-              <li>
-                <span class="shop-item-name">Cottage (alternativa ceia)</span>
-                <span class="shop-item-qty" data-day="200" data-unit="g"></span>
-                <span class="shop-item-note">200g na ceia (se não usar iogurte)</span>
+                <span class="shop-item-qty" data-day="350" data-unit="g"></span>
+                <span class="shop-item-note">150g lanche manhã + 200g lanche tarde</span>
               </li>
             </ul>
           </div>
@@ -652,13 +613,13 @@
             <ul class="shop-list">
               <li>
                 <span class="shop-item-name">Azeite de oliva extra virgem</span>
-                <span class="shop-item-qty" data-day="15" data-unit="ml"></span>
-                <span class="shop-item-note">10ml almoço + fio no jantar</span>
+                <span class="shop-item-qty" data-day="20" data-unit="ml"></span>
+                <span class="shop-item-note">10ml almoço + 10ml jantar</span>
               </li>
               <li>
                 <span class="shop-item-name">Castanha do Pará</span>
-                <span class="shop-item-qty" data-day="40" data-unit="g"></span>
-                <span class="shop-item-note">20g tarde + 20g ceia (~8 unidades/dia)</span>
+                <span class="shop-item-qty" data-day="20" data-unit="g"></span>
+                <span class="shop-item-note">20g no lanche da tarde (~4 unidades/dia)</span>
               </li>
             </ul>
           </div>
@@ -677,8 +638,8 @@
               </li>
               <li>
                 <span class="shop-item-name">Legumes variados (abobrinha/cenoura/brócolis)</span>
-                <span class="shop-item-qty" data-day="150" data-unit="g"></span>
-                <span class="shop-item-note">150g no jantar refogados</span>
+                <span class="shop-item-qty" data-day="100" data-unit="g"></span>
+                <span class="shop-item-note">~100g junto com a salada do almoço</span>
               </li>
               <li>
                 <span class="shop-item-name">Salada verde (alface/rúcula)</span>
@@ -703,7 +664,7 @@
               <li>
                 <span class="shop-item-name">Citrulina Malato</span>
                 <span class="shop-item-qty" data-day="7" data-unit="g"></span>
-                <span class="shop-item-note">6–8g pré-treino (dias de treino)</span>
+                <span class="shop-item-note">6–8g às 04:30 (dias de treino)</span>
               </li>
               <li>
                 <span class="shop-item-name">Beta-Alanina</span>
@@ -713,7 +674,7 @@
               <li>
                 <span class="shop-item-name">Cafeína 200mg</span>
                 <span class="shop-item-qty" data-day="1" data-unit="cáp"></span>
-                <span class="shop-item-note">200mg pré-treino (dias de treino)</span>
+                <span class="shop-item-note">200mg às 04:30 (dias de treino)</span>
               </li>
               <li>
                 <span class="shop-item-name">NAC (N-Acetil-Cisteína 500mg)</span>
@@ -733,7 +694,7 @@
               <li>
                 <span class="shop-item-name">ZMA</span>
                 <span class="shop-item-qty" data-day="1" data-unit="dose"></span>
-                <span class="shop-item-note">1 dose às 21h, longe do cálcio</span>
+                <span class="shop-item-note">1 dose às 21h30, longe do cálcio</span>
               </li>
             </ul>
           </div>
